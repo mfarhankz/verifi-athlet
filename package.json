@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "antd": "^5.22.5",
+    "antd-style": "^3.7.1",
     "next": "15.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
