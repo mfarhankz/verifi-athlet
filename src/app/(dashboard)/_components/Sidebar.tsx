@@ -1,6 +1,5 @@
 "use client";
 
-import { CalendarOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
 import Link from 'next/link'
@@ -43,6 +42,7 @@ export default function Sidebar() {
       defaultOpenKeys={["sub1"]}
       mode="inline"
       items={items}
+      className="sidebar-menu"
     />
   );
 }

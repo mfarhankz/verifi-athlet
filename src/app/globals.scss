@@ -1,24 +1,58 @@
+@use "scss/sidebar" as *;
+@use "scss/navbar" as *;
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Hind+Madurai:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+/* Default Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F2F2F2;
+  --foreground: #000000;
+  --white-background: #ffffff;
   --antd-font-family: "Barlow Semi Condensed", serif;
+  --primary: #1C1D4D;
+  --secondary: #ccc;
+  --error:#ccc;
+  --warning: #ccc;
+  --info: #ccc;
+  --text-white: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Light Theme */
+[data-theme="light"] {
+  --background: #F2F2F2;
+  --foreground: #171717;
+  --white-background: #ffffff;
+  --antd-font-family: "Barlow Semi Condensed", serif;
+  --primary: #1C1D4D;
+  --secondary: #ccc;
+  --error:#ccc;
+  --warning: #ccc;
+  --info: #ccc;
+  --text-white: #fff;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --background: #292a5d;
+  --foreground: #ededed;
+  --white-background: #ffffff;
+  --antd-font-family: "Barlow Semi Condensed", serif;
+  --primary: #1C1D4D;
+  --secondary: #ccc;
+  --error:#ccc;
+  --warning: #ccc;
+  --info: #ccc;
+  --text-white: #fff;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: var(--antd-font-family);
 }
+
+
+

@@ -1,0 +1,38 @@
+.sidebar-menu {
+    background: transparent !important;
+    border: none !important;
+    margin-top: 52px;
+    li {
+        margin: 0 !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+        height: 52px !important;
+        line-height: 52px !important;
+        &:active, &:focus-visible {
+            background-color: transparent !important;
+            outline: none !important;
+        }
+        .ant-menu-title-content {
+            margin: 0 !important;
+        }
+        a{
+            font-size: 16px;
+            font-weight: 500;
+            font-family: var(--antd-font-family);
+            color: var(--text-white) !important;
+        }
+        i {
+            font-size: 24px !important;
+            color: var(--text-white) !important;
+        }
+        &.ant-menu-item-selected {
+            background: url(/nav-hover.svg) no-repeat;
+            i {
+                color: var(--primary) !important;
+            }
+            a{
+                color: var(--primary) !important;
+            }
+        }
+    }
+}

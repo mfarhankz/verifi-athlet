@@ -8,10 +8,10 @@ const { Header, Sider, Content } = Layout;
 
 const headerStyle: React.CSSProperties = {
   textAlign: "center",
-  color: "#1C1D4D",
+  color: "var(--primary)",
   height: 50,
   paddingInline: 10,
-  backgroundColor: "#FFF",
+  backgroundColor: "var(--white-background)",
   lineHeight: "50px",
 };
 
@@ -19,15 +19,15 @@ const contentStyle: React.CSSProperties = {
   textAlign: "center",
   minHeight: 120,
   lineHeight: "120px",
-  color: "#1C1D4D",
-  backgroundColor: "#F2F2F2",
+  color: "var(--foreground)",
+  backgroundColor: "var(--background)",
 };
 
 const siderStyle: React.CSSProperties = {
   textAlign: "center",
   lineHeight: "16px",
-  color: "#fff",
-  backgroundColor: "#1C1D4D",
+  color: "var(--text-white)",
+  backgroundColor: "var(--primary)",
 };
 
 const layoutStyle = {

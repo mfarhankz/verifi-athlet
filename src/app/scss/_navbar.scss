@@ -1,0 +1,13 @@
+header {
+    .brand-title {
+        display: flex;
+        height: 49px;
+        a {
+            background: url(/logo.svg) no-repeat center;
+            width: 192px;
+            height: 100%;
+            display: inline-block;
+        }
+    }
+}
+
