@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Flex, Table } from "antd";
+import { Flex, Table, Space, Typography } from "antd";
 import type { TableProps } from "antd";
 import type { TableColumnsType } from "antd";
 import Image from "next/image";
@@ -91,18 +91,17 @@ const columns: TableColumnsType<DataType> = [
             />
             {record.school}
           </div>
-          {record.academy && 
-          <div className="academy">
-          <Image
-            src={record.academyIcon as string}
-            alt={text}
-            width={20}
-            height={20}
-          />
-          {record.academy}
-        </div>
-          }
-          
+          {record.academy && (
+            <div className="academy">
+              <Image
+                src={record.academyIcon as string}
+                alt={text}
+                width={20}
+                height={20}
+              />
+              {record.academy}
+            </div>
+          )}
         </div>
       </div>
     ),
@@ -506,7 +505,7 @@ const rowSelection: TableProps<DataType>["rowSelection"] = {
     );
   },
   getCheckboxProps: (record: DataType) => ({
-    disabled: record.name === "Disabled User", // Column configuration not to be checked
+    disabled: record.name === "Disabled User",
     name: record.name,
   }),
 };
@@ -514,13 +513,19 @@ const rowSelection: TableProps<DataType>["rowSelection"] = {
 const boxStyle: React.CSSProperties = {
   width: "100%",
   padding: "20px 0 20px 20px",
+  flexDirection: "column",
 };
+
+const { Title } = Typography;
+
 
 export default function MensSoccerPortal() {
   const [selectionType] = useState<"checkbox" | "radio">("checkbox");
   return (
-    <Flex wrap style={boxStyle}>
-        <h3>Available Players</h3>
+    <Flex style={boxStyle}>
+      <Space>
+        <Title level={2}>Available Players</Title>
+      </Space>
       <Table<DataType>
         rowSelection={{ type: selectionType, ...rowSelection }}
         columns={columns}
