@@ -353,6 +353,7 @@ const boxStyle: React.CSSProperties = {
 };
 const headerBox: React.CSSProperties = {
   padding: " 0 20px 0 0",
+  marginBottom: "10px",
 };
 
 const { Title } = Typography;
@@ -572,7 +573,7 @@ export default function MensSoccerPortal() {
   return (
     <Flex style={boxStyle}>
       <Flex style={headerBox} justify="space-between" align="center">
-        <Title level={2}>Available Players</Title>
+        <Title level={2} className="page-heading">Available Players</Title>
 
         <Space>
           <div className="selectbox-ui">
@@ -632,8 +633,7 @@ export default function MensSoccerPortal() {
             />
 
             <Flex justify="space-between" className="main-heading">
-              <Typography.Paragraph>
-                Bryce Underwood</Typography.Paragraph>
+              <Typography.Paragraph>Bryce Underwood</Typography.Paragraph>
               <Flex className="rating">
                 <Image
                   src="/start.svg"
@@ -646,18 +646,59 @@ export default function MensSoccerPortal() {
               </Flex>
             </Flex>
 
-            <Typography.Paragraph>
-                <span>
+            <Typography.Paragraph className="flex">
+              <span>
                 <Image
-              src="/b.svg"
-              alt={selectedPlyer.name}
-              width={20}
-              height={20}
-            />
-                </span>
-                Duke University</Typography.Paragraph>
+                  src="/b.svg"
+                  alt={selectedPlyer.name}
+                  width={18}
+                  height={18}
+                />
+              </span>
+              Duke University
+            </Typography.Paragraph>
 
             <Typography.Paragraph>Belleville, ML</Typography.Paragraph>
+
+            <Flex className="player-cost" justify="space-between">
+              <Typography.Paragraph className="cut-ui">
+                <small className="flex">
+                  <Image
+                    src="/player-icon.svg"
+                    alt={selectedPlyer.name}
+                    width={18}
+                    height={18}
+                    className="mr-1"
+                  />
+                  PLAYER
+                </small>
+                RANK LEVEL
+                <span>99.7</span>
+              </Typography.Paragraph>
+              <Typography.Paragraph className="price">
+                <small>NILL Value</small>
+                <span>$1.3M</span>
+              </Typography.Paragraph>
+            </Flex>
+
+            <Flex className="list">
+              <Typography.Paragraph>
+                <small>Pos</small>
+                QB
+              </Typography.Paragraph>
+              <Typography.Paragraph>
+                <small>Ht</small>
+                6.4”
+              </Typography.Paragraph>
+              <Typography.Paragraph>
+                <small>Wt</small>
+                215lb
+              </Typography.Paragraph>
+              <Typography.Paragraph>
+                <small>Commit Status</small>
+                LSU
+              </Typography.Paragraph>
+            </Flex>
           </Flex>
         )}
       </Modal>

@@ -12,8 +12,9 @@
     border-radius: 0;
     padding: 15px;
     background-color: var(--primary);
-    
+
     .main-heading {
+      margin-top: 5px;
       .ant-typography {
         font-size: 36px;
         font-style: italic;
@@ -34,19 +35,92 @@
       }
     }
     .ant-typography {
-        font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    color: var(--text-white);
-    letter-spacing: -1.12px;
-    margin: 5px 0;
-    display: flex;
-    line-height: 1.3;
-    span {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      color: var(--text-white);
+      letter-spacing: -1.12px;
+      margin: 5px 0;
+      line-height: 1.3;
+      span {
         background-color: var(--bg-white);
         padding: 2px 3px 1px 3px;
         margin-right: 5px;
+      }
     }
+    .player-cost {
+      position: relative;
+      .cut-ui {
+        background-color: #33345f;
+        padding: 8px 11px 3px;
+        position: relative;
+        width: 242px;
+        span {
+          background-color: var(--warning);
+          font-size: 50px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: -2px;
+          color: var(--primary);
+          position: absolute;
+          right: -3px;
+          top: -5px;
+          z-index: 2;
+          padding: 1.5px 12px 1.5px 0px;
+          &::before {
+            content: "";
+            background-color: var(--warning);
+            height: 63px;
+            width: 30px;
+            position: absolute;
+            left: -16px;
+            display: inline-block;
+            top: 0;
+            z-index: -1;
+            transform: skew(-20deg);
+          }
+        }
+      }
+      .price {
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -0.975px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: -8px;
+        text-align: right;
+        
+        span {
+            background: linear-gradient(90deg, #6affab 0%, #c8ff24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: -7px 0 0 0;
+        }
+        small {
+          font-size: 14px;
+          letter-spacing: 1px;
+          color: var(--text-white);
+        }
+      }
+    }
+
+    .list {
+        gap: 10;
+        align-items: center;
+        margin-top: 15px;
+        .ant-typography {
+            background-color: #33345f;
+            display: flex;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            font-size: 24px;
+        }
     }
   }
 }
