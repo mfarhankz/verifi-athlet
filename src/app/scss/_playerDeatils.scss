@@ -68,6 +68,7 @@
       }
       ul {
         display: inline-block;
+        width: 100%;
         li {
           display: inline-flex;
           width: 50%;
@@ -82,15 +83,24 @@
             }
             i {
               padding: 5px;
-              background-color: green;
               height: 20px;
               font-size: 14px;
               display: flex;
               line-height: 10px;
               color: #fff;
-              position: absolute;
-              right: 10px;
+              position: relative;
+              right: -10px;
               top: 5px;
+              &.success {
+                background-color: var(--success);
+              }
+              &.error {
+                background-color: var(--error);
+              }
+              &.warning {
+                background-color: var(--warning);
+                color: var(--primary);
+              }
             }
           }
           .ant-typography {

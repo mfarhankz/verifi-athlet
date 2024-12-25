@@ -1,0 +1,56 @@
+.player-information {
+  text-align: left;
+  h3 {
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 600;
+    padding: 9px;
+    background: linear-gradient(
+      90deg,
+      rgba(106, 255, 171, 0.1) 18.29%,
+      rgba(255, 255, 255, 0.5) 98.77%
+    );
+    font-family: var(--antd-font-family);
+  }
+  p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 211.111% */
+    letter-spacing: -0.18px;
+    margin: 10px 0;
+  }
+  span {
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.5;
+  }
+  h5 {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 500;
+    span {
+      width: 41px;
+      height: 41px;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.28px;
+      text-align: center;
+      margin-right: 12px;
+    }
+    .ms {
+      background-color: #f5fdff;
+      color: #41c8ea;
+      display: block;
+    }
+    .js {
+      background: #fff8f4;
+      color: #ff7525;
+      display: block;
+    }
+  }
+  a{
+    color: #126DB8;
+  }
+}

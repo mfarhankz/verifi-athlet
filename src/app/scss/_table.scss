@@ -11,6 +11,9 @@
       padding: 8px 12px !important;
       background: #dfdfe6 !important;
       border-radius: 0 !important;
+      font-size: 16px;
+      font-weight: 500 !important;
+      color: var(--primary);
     }
   }
 
@@ -19,6 +22,7 @@
       td {
         padding: 12px !important;
         font-size: 16px;
+        color: var(--primary);
       }
     }
   }
@@ -101,10 +105,13 @@
       width: calc(100% - 90px);
 
       h6 {
-        font-size: 22px;
+        font-size: 24px;
         font-style: italic;
         font-weight: 500;
         line-height: 20px;
+        span {
+          font-size: 18px;
+        }
       }
 
       .school {
@@ -172,6 +179,7 @@
       border: 0;
       border-radius: 0;
       padding: 0;
+      font-size: 16px;
     }
     .ant-select-selection-item {
       font-weight: 600;
