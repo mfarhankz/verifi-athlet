@@ -299,7 +299,7 @@ const Bio = () => (
       </div>
     </div>
     <h3>Academy Details</h3>
-    <div className="grid grid-cols-2 p-5 gap-y-10">
+    <div className="grid grid-cols-2 p-5 gap-y-8">
       <div>
         <span>GPA</span>
         <h5>3.20</h5>
@@ -332,17 +332,17 @@ const Bio = () => (
 
 const Stats = () => (
   <div>
-    <div className="mb-3">
+    <div className="mb-10">
     <h3>Passing</h3>
-    <Table dataSource={dataSource} columns={columns} />
+    <Table dataSource={dataSource} columns={columns} pagination={false} />
   </div>
-  <div className="mb-3">
+  <div className="mb-10">
     <h3>Defense</h3>
-    <Table dataSource={dataSource} columns={columns} />
+    <Table dataSource={dataSource} columns={columns} pagination={false} />
   </div>
   <div>
     <h3>Receiving</h3>
-    <Table dataSource={dataSource} columns={columns} />
+    <Table dataSource={dataSource} columns={columns} pagination={false} />
   </div>
   </div>
   

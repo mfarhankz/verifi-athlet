@@ -394,10 +394,10 @@ export default function MensSoccerPortal() {
                 <Image
                   src={
                     record.rating < 2
-                      ? "/start-red.svg"
+                      ? "/error-star.svg"
                       : record.rating > 4
-                      ? "/start.svg"
-                      : "/start-avg.svg"
+                      ? "/success-star.svg"
+                      : "/warning-star.svg"
                   }
                   alt={record.name}
                   width={18}
