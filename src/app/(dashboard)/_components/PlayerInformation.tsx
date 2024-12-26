@@ -22,7 +22,7 @@ interface DataType {
   lng: number;
   sack: number;
   rtg: number;
-  qbr: number;
+  qbr: number | string;
 }
 
 const dataSource: DataType[] = [
@@ -160,7 +160,7 @@ const dataSource: DataType[] = [
     lng: 8811,
     sack: 6025,
     rtg: 9374,
-    qbr: 0,
+    qbr: "-",
   },
 ];
 
@@ -176,13 +176,15 @@ const columns: TableColumnsType<DataType> = [
     key: "team",
     render: (_, record) => (
       <div className="flex">
-        <Image
-          src="/kisspng.svg"
-          alt={record.team}
-          width={38}
-          height={23}
-          className="mr-2"
-        />
+        {record.team && (
+          <Image
+            src="/kisspng.svg"
+            alt={record.team}
+            width={38}
+            height={23}
+            className="mr-2"
+          />
+        )}
         {record.team}
       </div>
     ),
@@ -333,19 +335,18 @@ const Bio = () => (
 const Stats = () => (
   <div>
     <div className="mb-10">
-    <h3>Passing</h3>
-    <Table dataSource={dataSource} columns={columns} pagination={false} />
+      <h3>Passing <span>89%</span></h3>
+      <Table dataSource={dataSource} columns={columns} pagination={false} />
+    </div>
+    <div className="mb-10">
+      <h3>Defense <span>49%</span></h3>
+      <Table dataSource={dataSource} columns={columns} pagination={false} />
+    </div>
+    <div>
+      <h3>Receiving <span>69%</span></h3>
+      <Table dataSource={dataSource} columns={columns} pagination={false} />
+    </div>
   </div>
-  <div className="mb-10">
-    <h3>Defense</h3>
-    <Table dataSource={dataSource} columns={columns} pagination={false} />
-  </div>
-  <div>
-    <h3>Receiving</h3>
-    <Table dataSource={dataSource} columns={columns} pagination={false} />
-  </div>
-  </div>
-  
 );
 const GameLog = () => (
   <div>

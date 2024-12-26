@@ -43,8 +43,8 @@
             margin-right: 5px;
             opacity: 0.6;
           }
-          &:last-child{
-            &::before{
+          &:last-child {
+            &::before {
               display: none;
             }
           }
@@ -293,6 +293,13 @@
         display: flex;
       }
     }
+  }
+
+  .xfeed {
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--primary);
   }
 }
 

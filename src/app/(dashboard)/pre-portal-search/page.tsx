@@ -1,6 +1,6 @@
 "use client";
 
-import { Flex, Progress, Tooltip } from "antd";
+import { Flex, Progress, Skeleton, Tooltip } from "antd";
 import Image from "next/image";
 import PlayerList from "../_components/PlayerList";
 import PlayerInformation from "../_components/PlayerInformation";
@@ -235,13 +235,24 @@ export default function PrePortalSearch() {
                 />
               </div>
               <div className="card">
-              <div className="grid grid-cols-2 gap-2 pages-link">
-                <div><i className="icon-link-circle mr-1"></i> ESPN Page</div>
-                <div><i className="icon-link-circle mr-1"></i> PFF Page</div>
-                <div><i className="icon-link-circle mr-1"></i> HS Highlight Tape</div>
-                <div><i className="icon-link-circle mr-1"></i> Roster Page</div>
-                <div className="col-span-2"><i className="icon-link-circle mr-1"></i> College Highlight Tape</div>
-              </div>
+                <div className="grid grid-cols-2 gap-2 pages-link">
+                  <div>
+                    <i className="icon-link-circle mr-1"></i> ESPN Page
+                  </div>
+                  <div>
+                    <i className="icon-link-circle mr-1"></i> PFF Page
+                  </div>
+                  <div>
+                    <i className="icon-link-circle mr-1"></i> HS Highlight Tape
+                  </div>
+                  <div>
+                    <i className="icon-link-circle mr-1"></i> Roster Page
+                  </div>
+                  <div className="col-span-2">
+                    <i className="icon-link-circle mr-1"></i> College Highlight
+                    Tape
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -249,7 +260,31 @@ export default function PrePortalSearch() {
           <div className="col-span-8 card-withou-pading ">
             <PlayerInformation />
           </div>
-          <div className="col-span-4 card">2</div>
+          <div className="col-span-4 card">
+            <div className="flex items-center xfeed mb-10">
+              <Image
+                src="/tw.svg"
+                alt="tw"
+                width={47}
+                height={47}
+                className="mr-1"
+              />
+              XFeed
+            </div>
+            <Skeleton />
+            <br />
+            <br />
+            <Skeleton />
+            <br />
+            <br />
+            <Skeleton />
+            <br />
+            <br />
+            <Skeleton />
+            <br />
+            <br />
+            <Skeleton />
+          </div>
 
           <div className="col-span-12 card">
             <PlayerList />
