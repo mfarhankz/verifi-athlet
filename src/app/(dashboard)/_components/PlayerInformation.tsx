@@ -1,3 +1,6 @@
+"use client";
+
+
 import type { TabsProps } from "antd";
 import { Table, Tabs } from "antd";
 import Image from "next/image";
