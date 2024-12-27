@@ -2,20 +2,9 @@
   font-size: 24px !important;
   font-style: italic;
   margin-bottom: 0 !important;
+  color: var(--primary) !important;
 }
-.ant-table-container {
-  .ant-table-thead {
-    th {
-      overflow-wrap: normal !important;
-      padding: 8px 12px !important;
-      background: #dfdfe6 !important;
-      border-radius: 0 !important;
-      font-size: 16px;
-      font-weight: 500 !important;
-      color: var(--primary);
-    }
-  }
-
+.with-footer {
   .ant-table-tbody {
     tr.ant-table-row {
       &:last-child {
@@ -32,6 +21,26 @@
           }
         }
       }
+    }
+  }
+}
+.ant-table-container {
+    border-start-start-radius: 0 !important;
+    border-start-end-radius: 0 !important;
+  .ant-table-thead {
+    th {
+      overflow-wrap: normal !important;
+      padding: 8px 12px !important;
+      background: #dfdfe6 !important;
+      border-radius: 0 !important;
+      font-size: 16px;
+      font-weight: 500 !important;
+      color: var(--primary);
+    }
+  }
+
+  .ant-table-tbody {
+    tr.ant-table-row {
       td {
         padding: 12px !important;
         font-size: 16px;

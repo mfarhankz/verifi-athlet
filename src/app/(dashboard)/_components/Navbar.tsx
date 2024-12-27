@@ -15,10 +15,6 @@ const items: MenuProps["items"] = [
     key: "2",
     label: <Link href="/settings">Settings</Link>,
   },
-  {
-    key: "3",
-    label: <Link href="">Logout</Link>,
-  },
 ];
 
 const { Search } = Input;

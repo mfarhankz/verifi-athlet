@@ -20,6 +20,7 @@ header {
       font-weight: 400;
       padding-left: 35px;
       position: relative;
+      color: var(--primary);
       i {
         margin-right: 7px;
         font-size: 24px;
@@ -28,6 +29,7 @@ header {
         top: -3px;
       }
       span {
+        color: var(--primary);
         opacity: 0.5;
       }
     }
@@ -71,7 +73,7 @@ header {
                 &::before {
                     content: '';
                     transform: skew(-20deg);
-                    background: var(--primary); 
+                    background: var(--bg-primary); 
                     width: 100%;
                     height: 100%;
                     display: block;

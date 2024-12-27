@@ -235,7 +235,7 @@ export default function PrePortalSearch() {
                 />
               </div>
               <div className="card">
-                <div className="grid grid-cols-2 gap-2 pages-link">
+                <div className="grid grid-cols-2 gap-4 pages-link">
                   <div>
                     <i className="icon-link-circle mr-1"></i> ESPN Page
                   </div>

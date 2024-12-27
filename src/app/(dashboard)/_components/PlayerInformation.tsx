@@ -355,9 +355,9 @@ const gameLogColumns = [
     render: (_: unknown, record: GameLog) => (
       <div className="flex items-center">
         {record.res && (
-          <span className="flex justify-center items-center h-5 w-5 bg-[#2BB650] mr-2">
+          <div className="flex justify-center items-center h-5 w-5 bg-[#2BB650] mr-2">
             <Image src="/w.svg" alt={record.res} width={16} height={13} />
-          </span>
+          </div>
         )}
         {record.res}
       </div>
@@ -497,19 +497,19 @@ const Stats = () => (
       <h3>
         Passing <span>89%</span>
       </h3>
-      <Table dataSource={dataSource} columns={columns} pagination={false} />
+      <Table dataSource={dataSource} columns={columns} pagination={false} className="with-footer" />
     </div>
     <div className="mb-10">
       <h3>
         Defense <span>49%</span>
       </h3>
-      <Table dataSource={dataSource} columns={columns} pagination={false} />
+      <Table dataSource={dataSource} columns={columns} pagination={false} className="with-footer" />
     </div>
     <div>
       <h3>
         Receiving <span>69%</span>
       </h3>
-      <Table dataSource={dataSource} columns={columns} pagination={false} />
+      <Table dataSource={dataSource} columns={columns} pagination={false} className="with-footer" />
     </div>
   </div>
 );

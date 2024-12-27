@@ -16,6 +16,17 @@ const MyTeam = () => (
   </div>
 );
 
+const ReferralProgram = () => (
+  <div className="referral-program">
+    <Typography.Title level={3}>
+      Invite Friends
+    </Typography.Title>
+    <Typography.Title level={4}>
+      Get Rewards upto $500
+    </Typography.Title>
+  </div>
+);
+
 const tabItems: TabsProps["items"] = [
   {
     key: "1",
@@ -38,7 +49,7 @@ const tabItems: TabsProps["items"] = [
   {
     key: "4",
     label: "Referral Program",
-    children: <MyTeam />,
+    children: <ReferralProgram />,
     icon: <i className="icon-money-3" />,
   },
 ];
@@ -56,7 +67,7 @@ export default function Setting() {
           onChange={onChange}
           className="setting-tabs"
         />
-        <Flex className="flex justify-center  gap-2">
+        <Flex className="flex justify-center gap-2">
           <Button size="large">Cancel</Button>
           <Button type="primary" size="large">
             Save Changes

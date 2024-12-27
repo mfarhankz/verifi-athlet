@@ -11,7 +11,7 @@
   .ant-modal-body {
     border-radius: 0;
     padding: 15px;
-    background-color: var(--primary);
+    background-color: var(--bg-primary);
 
     .main-heading {
       margin-top: 5px;
@@ -61,14 +61,14 @@
           line-height: normal;
           color: var(--primary);
           position: absolute;
-          right: -3px;
+          right: -5px;
           top: -5px;
           z-index: 2;
           padding: 1.5px 12px 1.5px 0px;
           &::before {
             content: "";
             background-color: var(--warning);
-            height: 63px;
+            height: 63.5px;
             width: 30px;
             position: absolute;
             left: -16px;

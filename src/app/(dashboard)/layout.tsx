@@ -25,7 +25,7 @@ const siderStyle: React.CSSProperties = {
   textAlign: "center",
   lineHeight: "16px",
   color: "var(--text-white)",
-  backgroundColor: "var(--primary)",
+  backgroundColor: "var(--bg-primary)",
 };
 
 const layoutStyle = {

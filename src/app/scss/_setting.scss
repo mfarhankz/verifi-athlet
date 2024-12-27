@@ -154,7 +154,7 @@ h2.setting-heading {
 }
 .ant-btn-primary {
   height: 42px;
-  background-color: var(--primary);
+  background-color: var(--bg-primary);
   border-radius: 0;
   border: 1px solid rgba(28, 29, 77, 0.2);
   span {
@@ -178,9 +178,9 @@ h2.setting-heading {
 
 .ant-switch {
   &.ant-switch-checked {
-    background-color: var(--primary);
+    background-color: var(--bg-primary);
     &:hover {
-      background-color: var(--primary) !important;
+      background-color: var(--bg-primary) !important;
     }
   }
 }
@@ -191,7 +191,7 @@ h2.setting-heading {
   &.ant-radio-wrapper-checked {
     .ant-radio-inner {
       border-color: var(--primary);
-      background-color: var(--primary);
+      background-color: var(--bg-primary);
     }
   }
 }

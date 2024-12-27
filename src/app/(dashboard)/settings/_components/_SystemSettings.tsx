@@ -2,8 +2,27 @@
 
 import { Flex, Input, Layout, Radio, Space, Switch, Typography } from "antd";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function SystemSettings() {
+
+    const [theme, setTheme] = useState("default");
+
+  // Initialize theme from localStorage or default to "default"
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "default";
+    setTheme(savedTheme);
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }, []);
+
+  const handleThemeChange = (e: { target: { value: unknown; }; }) => {
+    const value = e.target.value;
+    const newTheme = value === 1 ? "default" : value === 2 ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+  };
+
   const onChange = (checked: boolean) => {
     console.log(`switch to ${checked}`);
   };
@@ -69,7 +88,7 @@ export default function SystemSettings() {
             </Typography.Paragraph>
             <Switch defaultChecked onChange={onChange} />
           </Flex>
-          <Flex className="mb-5" align="center" justify="space-between">
+          <Flex className="mb-5 mt-5" align="center" justify="space-between">
             <Typography.Title level={4}>
               <i className="icon-keyboard-open"></i>
               Desktop push notification
@@ -102,9 +121,10 @@ export default function SystemSettings() {
 
         <Flex>
           <Radio.Group
-            name="radiogroup"
-            defaultValue={1}
+            name="theme"
+            defaultValue={theme === "default" ? 1 : theme === "dark" ? 2 : 3}
             className="flex w-[100%] items-center justify-around my-5"
+            onChange={handleThemeChange}
           >
             <Flex vertical align="center">
               <Image src={"/defualt.svg"} alt={""} height={126} width={157} />

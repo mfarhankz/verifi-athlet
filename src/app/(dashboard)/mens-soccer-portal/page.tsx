@@ -614,7 +614,7 @@ export default function MensSoccerPortal() {
         pagination={false}
         bordered
         style={{ width: "100%" }}
-        scroll={{ x: "max-content", y: 785 }}
+        scroll={{ x: "max-content", y: 885 }}
       />
       <Modal
         open={isProfileVisible}
@@ -636,7 +636,7 @@ export default function MensSoccerPortal() {
               <Typography.Paragraph>Bryce Underwood</Typography.Paragraph>
               <Flex className="rating">
                 <Image
-                  src="/start.svg"
+                  src="/success-star.svg"
                   alt="start"
                   width={25}
                   height={25}
