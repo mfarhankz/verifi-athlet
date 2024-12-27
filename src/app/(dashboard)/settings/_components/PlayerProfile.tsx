@@ -95,10 +95,10 @@ export default function PlayerProfile() {
         Password must be 8-60 characters and include at least two of the
         following: uppercase, lowercase, number, or symbol.
       </Typography.Paragraph>
-      <Flex className="flex justify-center  gap-2">
+      {/* <Flex className="flex justify-center  gap-2">
         <Button size="large">Cancel</Button>
         <Button type="primary" size="large">Save Changes</Button>
-      </Flex>
+      </Flex> */}
     </Flex>
   </Layout>
   );

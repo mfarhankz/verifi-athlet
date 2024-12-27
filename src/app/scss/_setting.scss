@@ -3,6 +3,10 @@ h2.setting-heading {
 }
 
 .setting-tabs {
+  .ant-tabs-content-holder {
+    overflow: auto;
+    height: calc(100vh - 250px);
+  }
   .ant-layout {
     background: transparent;
   }
@@ -11,29 +15,29 @@ h2.setting-heading {
     margin: 0 auto;
     width: 750px;
     .ant-tabs-nav-list {
-        border: 1px solid rgba(28, 29, 77, 0.20);
-        justify-content: space-between !important;
-        .ant-tabs-tab {
-            padding: 0 20px;
-            z-index: 99;
-            height: 42px;
-            max-width: initial;
-            .ant-tabs-tab-btn {
-                display: flex;
-                align-items: center;
-            }
-            .ant-tabs-tab-icon {
-                margin-right: 5px;
-                display: flex;
-                align-items: center;
-                i{
-                    display: flex;
-                }
-            }
+      border: 1px solid rgba(28, 29, 77, 0.2);
+      justify-content: space-between !important;
+      .ant-tabs-tab {
+        padding: 0 20px;
+        z-index: 99;
+        height: 42px;
+        max-width: initial;
+        .ant-tabs-tab-btn {
+          display: flex;
+          align-items: center;
         }
-        .ant-tabs-ink-bar {
-            height: 42px !important;
+        .ant-tabs-tab-icon {
+          margin-right: 5px;
+          display: flex;
+          align-items: center;
+          i {
+            display: flex;
+          }
         }
+      }
+      .ant-tabs-ink-bar {
+        height: 42px !important;
+      }
     }
   }
   .my-profile,
@@ -66,16 +70,25 @@ h2.setting-heading {
   h4.ant-typography {
     font-size: 18px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 25px;
     color: var(--primary);
     margin: 0;
     font-family: var(--antd-font-family);
+    display: flex;
+    i {
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+    }
+    span {
+      font-size: 16px;
+    }
   }
 
   img {
     padding: 5px;
-    border: 1px solid rgba(28, 29, 77, 0.10);
+    border: 1px solid rgba(28, 29, 77, 0.1);
     margin-right: 10px;
   }
 
@@ -95,6 +108,9 @@ h2.setting-heading {
     font-weight: 500;
     line-height: 25px;
     color: var(--primary);
+  }
+  a {
+    color: #126db8 !important;
   }
   .ant-input {
     height: 42px;
@@ -122,45 +138,64 @@ h2.setting-heading {
       }
     }
   }
-  a {
-    color: #126db8 !important;
-  }
-  .ant-btn-default{
-    height: 42px;
-    border-radius: 0;
-    span, i {
-        color: var(--primary);
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-        display: flex;
-    }
-  }
-  .ant-btn-primary {
-    height: 42px;
-    background-color: var(--primary);
-    border-radius: 0;
-    border: 1px solid rgba(28, 29, 77, 0.20);
-    span {
-        color: var(--text-white);
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-    }
-  }
-  .ant-btn-color-dangerous {
+}
+
+.ant-btn-default {
+  height: 42px;
+  border-radius: 0;
+  span,
+  i {
+    color: var(--primary);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
     display: flex;
-    padding: 0;
-    gap: 4px;
-    height: 30px;
-    span, i {
-        color: var(--error);
-        display: flex;
-    }
+  }
+}
+.ant-btn-primary {
+  height: 42px;
+  background-color: var(--primary);
+  border-radius: 0;
+  border: 1px solid rgba(28, 29, 77, 0.2);
+  span {
+    color: var(--text-white);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+  }
+}
+.ant-btn-color-dangerous {
+  display: flex;
+  padding: 0;
+  gap: 4px;
+  height: 30px;
+  span,
+  i {
+    color: var(--error);
+    display: flex;
   }
 }
 
+.ant-switch {
+  &.ant-switch-checked {
+    background-color: var(--primary);
+    &:hover {
+      background-color: var(--primary) !important;
+    }
+  }
+}
+.ant-radio-wrapper {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  &.ant-radio-wrapper-checked {
+    .ant-radio-inner {
+      border-color: var(--primary);
+      background-color: var(--primary);
+    }
+  }
+}
 .c-height {
   height: calc(100% - 15px);
-  overflow: auto;
+  overflow: hidden;
 }
