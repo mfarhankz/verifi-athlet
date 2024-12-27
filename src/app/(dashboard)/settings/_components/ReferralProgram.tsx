@@ -52,7 +52,7 @@ export default function ReferralProgram() {
           <Space>
             <Input
               placeholder="Enter email address to invite"
-              className="w-[345] invite-input"
+              className="w-[345px] invite-input"
             />
             <Button color="default" variant="filled" className="invite-btn">
               Invite

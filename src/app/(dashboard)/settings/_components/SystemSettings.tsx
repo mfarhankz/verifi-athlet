@@ -143,19 +143,19 @@ export default function SystemSettings() {
         <Flex vertical className="mb-6 mt-2">
           <Radio>Custom Color</Radio>
           <Flex align="center" className="mb-2 mt-5">
-            <Typography.Paragraph className="w-[120]">
+            <Typography.Paragraph className="w-[120px]">
               Primary Color
             </Typography.Paragraph>
             <Space>
-              <Input placeholder="#" /> <Input className="w-[40]" />
+              <Input placeholder="#" /> <Input className="w-[40px]" />
             </Space>
           </Flex>
           <Flex align="center">
-            <Typography.Paragraph className="w-[120]">
+            <Typography.Paragraph className="w-[120px]">
               Secondary Color
             </Typography.Paragraph>
             <Space>
-              <Input placeholder="#" /> <Input className="w-[40]" />
+              <Input placeholder="#" /> <Input className="w-[40px]" />
             </Space>
           </Flex>
         </Flex>
