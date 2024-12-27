@@ -259,7 +259,7 @@ export default function MyTeam() {
   return (
     <Layout>
       <Flex className="grid grid-cols-2 gap-4">
-        <Flex vertical className="card">
+        <Flex vertical className="card right-100">
           <Flex vertical>
             <Typography.Title level={3}>
               <i className="icon-user"></i>Team Information
@@ -424,7 +424,7 @@ export default function MyTeam() {
               </Flex>
               <Flex vertical className="mb-3">
                 <Typography.Text>Choose Rating Type</Typography.Text>
-                <Radio.Group onChange={onChange} defaultValue="a">
+                <Radio.Group onChange={onChange} defaultValue="a" className="rating-type">
                   <Radio.Button value="a">Hangzhou</Radio.Button>
                   <Radio.Button value="b">Shanghai</Radio.Button>
                   <Radio.Button value="c">Beijing</Radio.Button>

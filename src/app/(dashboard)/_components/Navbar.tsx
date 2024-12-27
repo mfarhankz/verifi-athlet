@@ -9,7 +9,7 @@ const { Paragraph } = Typography;
 const items: MenuProps["items"] = [
   {
     key: "1",
-    label: <Link href="/profile">Profile</Link>,
+    label: <Link href="/survey">Survey</Link>,
   },
   {
     key: "2",

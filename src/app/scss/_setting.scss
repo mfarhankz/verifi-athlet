@@ -374,3 +374,39 @@ h2.setting-heading {
 .edit {
   color: #126db8 !important;
 }
+.right-100 {
+  padding-right: 150px !important;
+}
+.rating-type {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  border: 1px solid rgba(28, 29, 77, 0.2);
+  background: #fff;
+  .ant-radio-button-wrapper {
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    font-size: 18px;
+    color: var(--primary);
+    &::before {
+      display: none;
+    }
+  }
+  .ant-radio-button-wrapper-checked {
+    background: linear-gradient(
+      90deg,
+      rgba(106, 255, 171, 0.6) 0%,
+      rgba(200, 255, 36, 0.6) 100%
+    );
+    font-weight: 600;
+    border: 0;
+  }
+}
