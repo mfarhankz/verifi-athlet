@@ -1,6 +1,6 @@
 "use client";
 
-import { Flex, Input, Layout, Radio, Space, Switch, Typography } from "antd";
+import { Flex, Input, Layout, Radio, RadioChangeEvent, Space, Switch, Typography } from "antd";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -15,8 +15,8 @@ export default function SystemSettings() {
     document.documentElement.setAttribute("data-theme", savedTheme);
   }, []);
 
-  const handleThemeChange = (e: any) => {
-    const value = e.target.value;
+  const handleThemeChange = (e: RadioChangeEvent) => {
+    const value = e.target.value; // `value` is already the correct type (number)
     const newTheme = value === 1 ? "default" : value === 2 ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
