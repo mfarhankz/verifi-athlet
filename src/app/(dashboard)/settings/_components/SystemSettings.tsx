@@ -15,7 +15,7 @@ export default function SystemSettings() {
     document.documentElement.setAttribute("data-theme", savedTheme);
   }, []);
 
-  const handleThemeChange = (e: { target: { value: unknown; }; }) => {
+  const handleThemeChange = (e: any) => {
     const value = e.target.value;
     const newTheme = value === 1 ? "default" : value === 2 ? "dark" : "light";
     setTheme(newTheme);

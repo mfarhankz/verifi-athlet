@@ -1,29 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Button, Flex, Tabs, Typography } from "antd";
 import type { TabsProps } from "antd";
 import PlayerProfile from "@/app/(dashboard)/settings/_components/PlayerProfile";
-import SystemSettings from "@/app/(dashboard)/settings/_components/_SystemSettings";
+import SystemSettings from "@/app/(dashboard)/settings/_components/SystemSettings";
+import ReferralProgram from "@/app/(dashboard)/settings/_components/ReferralProgram";
 
-const onChange = (key: string) => {
-  console.log("Active tab key:", key);
-};
 
 const MyTeam = () => (
   <div className="My Team">
     <h3>team</h3>
-  </div>
-);
-
-const ReferralProgram = () => (
-  <div className="referral-program">
-    <Typography.Title level={3}>
-      Invite Friends
-    </Typography.Title>
-    <Typography.Title level={4}>
-      Get Rewards upto $500
-    </Typography.Title>
   </div>
 );
 
@@ -55,6 +42,11 @@ const tabItems: TabsProps["items"] = [
 ];
 
 export default function Setting() {
+    const [activeTab, setActiveTab] = useState("1");
+
+  const onChange = (key: React.SetStateAction<string>) => {
+    setActiveTab(key); // Update the active tab when changed
+  };
   return (
     <div className="main-container">
       <div className="card c-height">
@@ -67,12 +59,14 @@ export default function Setting() {
           onChange={onChange}
           className="setting-tabs"
         />
+        {activeTab !== "4" && (
         <Flex className="flex justify-center gap-2">
           <Button size="large">Cancel</Button>
           <Button type="primary" size="large">
             Save Changes
           </Button>
         </Flex>
+        )}
       </div>
     </div>
   );

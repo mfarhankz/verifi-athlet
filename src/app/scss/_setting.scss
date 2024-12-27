@@ -46,6 +46,116 @@ h2.setting-heading {
     margin: 0 auto;
   }
 
+  .referral-program {
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+
+    .bg-color {
+      display: flex;
+      padding: 25px;
+      background: linear-gradient(
+        115deg,
+        rgba(106, 255, 171, 0.1) 0%,
+        rgba(255, 255, 255, 0.5) 66.98%
+      );
+    }
+    .bg-img {
+      background: url(/money.svg) no-repeat;
+      background-position: 120% 0;
+      min-height: 319px;
+      width: 100%;
+    }
+    .ref-h1 {
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 600;
+      margin: 0 0 5px 0;
+      letter-spacing: -2.4px;
+    }
+    .ref-h2 {
+      font-size: 38px;
+      font-style: normal;
+      font-weight: 600;
+      background: var(--primary);
+      // color: var(--text-white);
+      margin: 0;
+      padding: 5px 15px;
+      letter-spacing: -2.4px;
+      span {
+        background: linear-gradient(90deg, #6affab 0%, #c8ff24 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #0000;
+      }
+    }
+    .small {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .mediam {
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .large {
+      font-size: 35px;
+      font-style: normal;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+    .invite-input {
+      margin: 0 !important;
+    }
+    .invite-btn {
+      background: var(--bg-primary);
+      opacity: 0.5;
+      padding: 5px 25px;
+      span {
+        color: var(--text-white);
+      }
+    }
+    a {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-decoration: underline;
+      margin: 10px 0 0;
+    }
+    .text-box {
+      h1.ant-typography {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        margin-bottom: 0 !important;
+      }
+      h2.ant-typography {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+      }
+      h4.ant-typography {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        margin: 8px 0;
+      }
+      span.ant-typography {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+      }
+    }
+  }
+
   h3.ant-typography {
     font-size: 20px;
     font-style: italic;
@@ -86,7 +196,7 @@ h2.setting-heading {
     }
   }
 
-  img {
+  .border-img {
     padding: 5px;
     border: 1px solid rgba(28, 29, 77, 0.1);
     margin-right: 10px;

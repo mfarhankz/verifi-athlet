@@ -15,7 +15,7 @@ export default function PlayerProfile() {
       <Flex className="items-center justify-between mb-5">
         <Flex className="items-center">
           <Image
-            className="mr-2"
+            className="mr-2 border-img"
             src={"/user.svg"}
             alt={"Profile"}
             height={110}
@@ -95,10 +95,7 @@ export default function PlayerProfile() {
         Password must be 8-60 characters and include at least two of the
         following: uppercase, lowercase, number, or symbol.
       </Typography.Paragraph>
-      {/* <Flex className="flex justify-center  gap-2">
-        <Button size="large">Cancel</Button>
-        <Button type="primary" size="large">Save Changes</Button>
-      </Flex> */}
+
     </Flex>
   </Layout>
   );
