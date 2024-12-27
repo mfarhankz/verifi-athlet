@@ -6,13 +6,7 @@ import type { TabsProps } from "antd";
 import PlayerProfile from "@/app/(dashboard)/settings/_components/PlayerProfile";
 import SystemSettings from "@/app/(dashboard)/settings/_components/SystemSettings";
 import ReferralProgram from "@/app/(dashboard)/settings/_components/ReferralProgram";
-
-
-const MyTeam = () => (
-  <div className="My Team">
-    <h3>team</h3>
-  </div>
-);
+import MyTeam from "@/app/(dashboard)/settings/_components/MyTeam";
 
 const tabItems: TabsProps["items"] = [
   {
@@ -42,16 +36,24 @@ const tabItems: TabsProps["items"] = [
 ];
 
 export default function Setting() {
-    const [activeTab, setActiveTab] = useState("1");
+  const [activeTab, setActiveTab] = useState("1");
 
   const onChange = (key: React.SetStateAction<string>) => {
-    setActiveTab(key); // Update the active tab when changed
+    setActiveTab(key);
   };
+
+  const headingText: { [key: string]: string } = {
+    "1": "Settings",
+    "2": "Team Settings",
+    "3": "System Settings",
+    "4": "Referral Program",
+  };
+
   return (
     <div className="main-container">
-      <div className="card c-height">
+      <div className={`${activeTab !== "2" ? "card" : ""} c-height`}>
         <Typography.Title level={2} className="setting-heading">
-          System Settings
+          {headingText[activeTab] || "Default Settings"}
         </Typography.Title>
         <Tabs
           defaultActiveKey="1"
@@ -60,12 +62,12 @@ export default function Setting() {
           className="setting-tabs"
         />
         {activeTab !== "4" && (
-        <Flex className="flex justify-center gap-2">
-          <Button size="large">Cancel</Button>
-          <Button type="primary" size="large">
-            Save Changes
-          </Button>
-        </Flex>
+          <Flex className="flex justify-center gap-2">
+            <Button size="large">Cancel</Button>
+            <Button type="primary" size="large">
+              Save Changes
+            </Button>
+          </Flex>
         )}
       </div>
     </div>

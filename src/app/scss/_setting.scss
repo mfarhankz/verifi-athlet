@@ -1,5 +1,12 @@
 h2.setting-heading {
   margin-bottom: 10px !important;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: left;
+  font-style: italic;
+  text-align: left;
 }
 
 .setting-tabs {
@@ -126,7 +133,7 @@ h2.setting-heading {
       }
       &:hover {
         background: var(--bg-primary) !important;
-        opacity: 1 ;
+        opacity: 1;
       }
     }
     a {
@@ -319,4 +326,51 @@ h2.setting-heading {
 .c-height {
   height: calc(100% - 15px);
   overflow: hidden;
+  padding: 15px 0;
+}
+
+.linear-gradient {
+  background-color: rgb(106, 255, 171);
+  background-image: linear-gradient(
+    to right,
+    rgb(106, 255, 171),
+    rgb(200, 255, 36)
+  );
+}
+.custom-h3 {
+  font-weight: 400 !important;
+  font-size: 32px !important;
+  margin-bottom: 0px !important;
+  span {
+    font-weight: 300 !important;
+    font-size: 32px !important;
+  }
+}
+.team-table {
+  width: 100%;
+  .custom-h4 {
+    font-weight: 400 !important;
+    font-size: 18px !important;
+  }
+  .ant-table-cell {
+    vertical-align: bottom;
+  }
+  div.ant-typography {
+    font-weight: 500 !important;
+  }
+  article.ant-typography {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    span {
+      font-weight: 400;
+    }
+  }
+}
+.remove {
+  color: var(--error) !important;
+}
+.edit {
+  color: #126db8 !important;
 }
