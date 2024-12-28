@@ -1,26 +1,31 @@
 "use client";
 
-import { Button, Flex, Typography } from "antd";
+import { Flex, Typography } from "antd";
+import ServeyStart from "@/app/(dashboard)/survey/_components/SurveyStart";
+import Step1 from "@/app/(dashboard)/survey/_components/Step1";
+import Step2 from "@/app/(dashboard)/survey/_components/Step2";
+import Step3 from "@/app/(dashboard)/survey/_components/Step3";
 
 export default function Survey() {
   return (
     <div className="main-container">
       <Flex vertical className="gap-3">
         <div className="card">
-          <Typography.Title level={2} className="setting-heading" style={{marginBottom:0}}>
+          <Typography.Title
+            level={2}
+            className="setting-heading"
+            style={{ marginBottom: 0 }}
+          >
             Survey
           </Typography.Title>
         </div>
         <div className="card">
-            <Flex vertical className="w-[800px] m-auto">
-                <Flex vertical className="servey-box">
-                    <Flex className="gray">
-                        COMPLETE SURVEY FORM
-                    </Flex>
-
-                    <Button type="link">Start Servey</Button>
-                </Flex>
-            </Flex>
+          <Flex vertical className="w-[800px] m-auto">
+            {/* <ServeyStart /> */}
+            <Step1 />
+            <Step2 />
+            <Step3 />
+          </Flex>
         </div>
       </Flex>
     </div>

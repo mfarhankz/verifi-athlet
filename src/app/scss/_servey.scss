@@ -4,6 +4,8 @@
     width: 100%;
     display: flex;
     margin: 30px 0;
+    font-family: var(--antd-font-family);
+    color: var(--primary) !important;
 
     .gray {
         background: #f8f8fa;
@@ -11,5 +13,261 @@
         display: flex;
         padding: 10px;
         margin-bottom: 15px;
+
+        .main-heading {
+            background: linear-gradient(90deg, #6affab 59.55%, #c8ff24 98.85%);
+            font-size: 38px;
+            font-style: italic;
+            font-weight: 800;
+            padding: 8px 12px;
+            color: var(--primary);
+            margin: 20px 0;
+            font-family: var(--antd-font-family);
+
+            span {
+                font-size: 18px;
+                font-style: italic;
+                font-weight: 700;
+                color: var(--text-white);
+                background: var(--primary);
+                padding: 2px 8px;
+                position: relative;
+                top: -6.1px;
+                left: -2px;
+                transform: skew(-12deg);
+                display: inline-block;
+            }
+        }
+
+        .user-avg {
+            position: relative;
+
+            img {
+                border: 1px solid rgba(28, 29, 77, 0.20);
+            }
+
+            span {
+                color: var(--primary);
+                position: absolute;
+                bottom: -1px;
+                left: -1px;
+                z-index: 9;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                width: 72px;
+                height: 38px;
+                background: url(/player-avg.svg) center no-repeat;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 6px 0 0;
+            }
+        }
+
+        h3 {
+            font-size: 32px;
+            font-style: italic;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 15px 0 0 0;
+            color: var(--primary);
+            text-align: center;
+            font-family: var(--antd-font-family);
+
+            a {
+                text-decoration: underline;
+                color: #126DB8 !important;
+            }
+        }
+
+        div.ant-typography {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            color: var(--primary);
+            text-align: center;
+            font-family: var(--antd-font-family);
+        }
+
+        .set-position {
+            position: absolute;
+            top: 160px;
+            line-height: 20px;
+
+            div {
+                text-align: left;
+                font-size: 18px;
+                line-height: 18px;
+                font-family: var(--antd-font-family);
+                margin-left: 10px;
+
+                span {
+                    color: var(--error);
+                }
+            }
+        }
     }
+
+    .next-servey {
+        background: url(/next.svg) no-repeat;
+        background-size: contain;
+        width: 180px;
+        height: 46px;
+        color: var(--primary);
+        font-family: "Barlow Semi Condensed";
+        font-size: 22px;
+        font-style: italic;
+        font-weight: 700 !important;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-text-stroke: .5px #fff;
+        /* Stroke with 2px red */
+        margin-left: auto;
+        margin-bottom: 12px;
+        margin-top: 7px;
+    }
+
+    .back-servey {
+        background: url(/back.svg) no-repeat;
+        background-size: contain;
+        width: 115px;
+        height: 46px;
+        color: var(--primary);
+        font-family: "Barlow Semi Condensed";
+        font-size: 22px;
+        font-style: italic;
+        font-weight: 700 !important;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-text-stroke: .5px #fff;
+        /* Stroke with 2px red */
+        margin-bottom: 12px;
+        margin-top: 7px;
+    }
+
+    .survey-head {
+        span {
+            color: var(--primary);
+            opacity: 0.5;
+            font-weight: 500;
+        }
+    }
+
+    .survey-banner {
+        background-color: #2BB6500D;
+
+        h4 {
+            font-size: 22px !important;
+            font-weight: 700;
+        }
+    }
+
+    .survey-textarea {
+        width: 575px;
+
+        h4 {
+            margin-bottom: 6px;
+            font-weight: 500 !important;
+            line-height: 25px;
+        }
+
+        textarea:focus {
+            border-color: rgba(28, 29, 77, 0.20);
+            box-shadow: none;
+            border-radius: 0px;
+        }
+
+        textarea {
+            border-color: rgba(28, 29, 77, 0.20);
+            border-radius: 0px;
+            resize: none;
+        }
+    }
+
+    .optional-banner {
+        width: 575px;
+        background-color: #1C1D4D0D;
+        border: 1px solid #1C1D4D33;
+        .ant-typography {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 22px !important;
+        }
+
+        Button {
+            background-color: var(--primary);
+            font-size: 18px;
+            height: 42px;
+
+            span {
+                color: white !important;
+            }
+        }
+        Button:hover{
+            background-color: var(--primary) !important;
+            border: none !important;
+        }
+    }
+
+    .radio-group {
+        width: 100%;
+
+        .radio-item {
+            width: 23%;
+            height: 42px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #1C1D4D33;
+            font-size: 18px;
+            font-weight: 400;
+
+            &.ant-radio-wrapper-checked {
+                background-color: #2BB65033;
+
+                .ant-radio-inner {
+                    background-color: var(--success);
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .survey-radio-group {
+        .radio-item {
+            width: 31.9% !important;
+        }
+    }
+
+    .transferred {
+        background-color: #fff;
+        // width: 335px;
+        padding: 10px;
+
+        span {
+            font-size: 18px;
+        }
+
+        .verified {
+            font-size: 12px;
+            background: linear-gradient(90deg, rgba(106, 255, 171, 0.6) 0%, rgba(200, 255, 36, 0.6) 100%);
+            padding: 2px 6px;
+            width: fit-content;
+        }
+    }
+
+    input.ant-input {
+        height: 42px;
+        border-radius: 0;
+    }
+
+    .margin-0{
+        margin: 0 !important;
+    }
+
 }
