@@ -414,7 +414,7 @@ export default function MensSoccerPortal() {
                 width={20}
                 height={20}
               />
-              {record.school}
+              <span>{record.school}</span>
             </div>
             {record.academy && (
               <div className="academy">
@@ -424,7 +424,7 @@ export default function MensSoccerPortal() {
                   width={20}
                   height={20}
                 />
-                {record.academy}
+                <span>{record.academy}</span>
               </div>
             )}
           </div>
@@ -614,7 +614,7 @@ export default function MensSoccerPortal() {
         pagination={false}
         bordered
         style={{ width: "100%" }}
-        scroll={{ x: "max-content", y: 885 }}
+        scroll={{ x: "max-content", y: "calc(100vh - 180px)" }}
       />
       <Modal
         open={isProfileVisible}

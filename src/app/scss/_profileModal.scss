@@ -39,7 +39,6 @@
       font-weight: 400;
       color: var(--text-white);
       margin: 5px 0;
-      line-height: 1.3;
       span {
         background-color: var(--bg-white);
         padding: 2px 3px 1px 3px;
@@ -50,9 +49,14 @@
       position: relative;
       .cut-ui {
         background-color: #33345f;
+        color: var(--text-white);
         padding: 8px 11px 3px;
         position: relative;
-        width: 242px;
+        width: 275px;
+        line-height: 24px;
+        small{
+          color: var(--text-white);
+        }
         span {
           background-color: var(--warning);
           font-size: 50px;
@@ -68,7 +72,7 @@
           &::before {
             content: "";
             background-color: var(--warning);
-            height: 63.5px;
+            height: 63px;
             width: 30px;
             position: absolute;
             left: -16px;
@@ -107,14 +111,24 @@
     .list {
         gap: 10;
         align-items: center;
+        justify-content: space-between;
         margin-top: 15px;
         .ant-typography {
             background-color: #33345f;
+            color: var(--text-white);
             display: flex;
-            padding: 10px 20px;
+            padding: 10px 15px;
             display: flex;
             flex-direction: column;
-            font-size: 24px;
+            font-size: 20px;
+            width: 100%;
+            white-space: nowrap;
+            &:last-child {
+              width: 160px;
+            }
+            small{
+              color: var(--text-white);
+            }
         }
     }
   }

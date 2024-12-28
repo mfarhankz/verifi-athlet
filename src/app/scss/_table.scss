@@ -40,9 +40,12 @@
   }
 
   .ant-table-tbody {
+    .ant-table-row.ant-table-row-selected >.ant-table-cell {
+      background: #FBFFEE !important;
+    }
     tr.ant-table-row {
       td {
-        padding: 12px !important;
+        padding: 18px !important;
         font-size: 16px;
         color: var(--primary);
       }
@@ -107,7 +110,7 @@
         bottom: -1px;
         left: -1px;
         z-index: 9;
-        font-size: 14px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 600;
         width: 49px;
@@ -127,9 +130,9 @@
       width: calc(100% - 90px);
 
       h6 {
-        font-size: 24px;
+        font-size: 28px;
         font-style: italic;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 20px;
         span {
           font-size: 18px;
@@ -144,6 +147,14 @@
         padding-right: 15px;
         margin: 6px 0;
         width: fit-content;
+        
+
+        span {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 200px;
+        }
 
         img {
           margin-right: 7px;
@@ -160,6 +171,12 @@
         justify-content: start;
         height: 28px;
         padding-left: 35px;
+        span {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 200px;
+        }
 
         img {
           margin-right: 7px;
