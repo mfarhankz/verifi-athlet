@@ -34,7 +34,7 @@ export default function SurveyStart() {
                     <Typography.Title level={3}>Jason Shaun</Typography.Title>
                     <Typography.Paragraph>Become more accessible to thousands <br /> for college coaches</Typography.Paragraph>
                     </Flex>
-                <Flex className="relative mt-5 mb-5">
+                {/* <Flex className="relative mt-5 mb-5">
                   <Image
                     src={"/usa-map.svg"}
                     alt={"logo"}
@@ -45,7 +45,18 @@ export default function SurveyStart() {
                     <Typography.Title level={3}>5,603</Typography.Title>
                     <Typography.Paragraph> <span>Customers</span> <br />Across America</Typography.Paragraph>
                   </Flex>
-                </Flex>
+                </Flex> */}
+                <Flex vertical align="center" className="mt-5 mb-5">
+          <Image src={"/flag.svg"} alt={"flag"} height={116} width={147} />
+          <Flex className="">
+            <Typography.Title level={3}>5,603</Typography.Title>
+            <Typography.Paragraph>
+              <span>Customers</span> <br />
+              Across America
+            </Typography.Paragraph>
+          </Flex>
+          <Image src={"/map.svg"} alt={"map"} height={116} width={310} />
+        </Flex>
                 <Flex className="mb-10">
                     <Typography.Title level={3} className="flex items-center justify-center">
                     <Image

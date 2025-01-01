@@ -20,8 +20,8 @@ export default function Survey() {
           </Typography.Title>
         </div>
         <div className="card">
-          <Flex vertical className="w-[800px] m-auto">
-            {/* <ServeyStart /> */}
+          <Flex vertical className="w-[100%] m-auto">
+            <ServeyStart />
             <Step1 />
             <Step2 />
             <Step3 />
