@@ -61,8 +61,8 @@ export default function PrePortalSearch() {
                   </h5>
                 </div>
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="col-span-2 card">
-                    <div className="grid grid-cols-2 gap-4 career-info">
+                  <div className="col-span-2">
+                    <div className="grid grid-cols-2 gap-4 career-info mt-4">
                       <div>
                         <span>Entered On Portal</span>
                         <h6>03/06/2023</h6>
@@ -186,7 +186,7 @@ export default function PrePortalSearch() {
                 </div>
                 <Progress
                   percent={80}
-                  size={[330, 26]}
+                  size={["100%", 26]}
                   strokeLinecap="butt"
                   showInfo={false}
                   className="success"
@@ -200,7 +200,7 @@ export default function PrePortalSearch() {
                 </div>
                 <Progress
                   percent={20}
-                  size={[330, 26]}
+                  size={["100%", 26]}
                   strokeLinecap="butt"
                   showInfo={false}
                   className="error"
@@ -214,7 +214,7 @@ export default function PrePortalSearch() {
                 </div>
                 <Progress
                   percent={25}
-                  size={[330, 26]}
+                  size={["100%", 26]}
                   strokeLinecap="butt"
                   showInfo={false}
                   className="warning"
@@ -228,14 +228,14 @@ export default function PrePortalSearch() {
                 </div>
                 <Progress
                   percent={65}
-                  size={[330, 26]}
+                  size={["100%", 26]}
                   strokeLinecap="butt"
                   showInfo={false}
                   className="success"
                 />
               </div>
               <div className="card">
-                <div className="grid grid-cols-2 gap-4 pages-link">
+                <div className="grid grid-cols-2 gap-2 pages-link">
                   <div>
                     <i className="icon-link-circle mr-1"></i> ESPN Page
                   </div>
