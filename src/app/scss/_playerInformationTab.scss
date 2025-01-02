@@ -57,13 +57,15 @@
         .ms {
             background-color: #f5fdff;
             color: #41c8ea;
-            display: block;
+            display: flex;
+            align-items: center;
         }
 
         .js {
             background: #fff8f4;
             color: #ff7525;
-            display: block;
+            display: flex;
+            align-items: center;
         }
     }
 

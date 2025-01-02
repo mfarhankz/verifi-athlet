@@ -8,7 +8,6 @@
   .ant-table-tbody {
     tr.ant-table-row {
       &:last-child {
-        
         td {
           font-weight: 500;
           border-top: 1px #8d8ea6 solid;
@@ -25,8 +24,17 @@
   }
 }
 .ant-table-container {
-    border-start-start-radius: 0 !important;
-    border-start-end-radius: 0 !important;
+  border-start-start-radius: 0 !important;
+  border-start-end-radius: 0 !important;
+
+  .ant-checkbox-checked .ant-checkbox-inner, .ant-checkbox-indeterminate .ant-checkbox-inner:after {
+    background-color: #1c1d4d !important;
+    border-color: #1c1d4d !important;
+  }
+  .ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+    border-color: #1c1d4d !important;
+}
+
   .ant-table-thead {
     th {
       overflow-wrap: normal !important;
@@ -40,8 +48,8 @@
   }
 
   .ant-table-tbody {
-    .ant-table-row.ant-table-row-selected >.ant-table-cell {
-      background: #FBFFEE !important;
+    .ant-table-row.ant-table-row-selected > .ant-table-cell {
+      background: #fbffee !important;
     }
     tr.ant-table-row {
       td {
@@ -147,7 +155,6 @@
         padding-right: 15px;
         margin: 6px 0;
         width: fit-content;
-        
 
         span {
           white-space: nowrap;
