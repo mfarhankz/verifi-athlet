@@ -42,32 +42,6 @@
             }
         }
 
-        .user-avg {
-            position: relative;
-
-            img {
-                border: 1px solid rgba(28, 29, 77, 0.20);
-            }
-
-            span {
-                color: var(--primary);
-                position: absolute;
-                bottom: -1px;
-                left: -1px;
-                z-index: 9;
-                font-size: 20px;
-                font-style: normal;
-                font-weight: 600;
-                width: 72px;
-                height: 38px;
-                background: url(/player-avg.svg) center no-repeat;
-                background-size: cover;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0 6px 0 0;
-            }
-        }
 
         h3 {
             font-size: 32px;
@@ -299,6 +273,15 @@
 
     .margin-0{
         margin: 0 !important;
+    }
+    .devision{
+        h4{
+            margin-bottom: 0;
+        }
+        li{
+            padding: 17px 30px;
+            border-bottom: 1px solid #1C1D4D14;
+        }
     }
 
 }

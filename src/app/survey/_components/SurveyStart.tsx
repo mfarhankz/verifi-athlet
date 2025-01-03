@@ -1,5 +1,6 @@
 "use client";
 
+import ImageWithAverage from "@/app/(dashboard)/_components/ImageWithAverage";
 import { Flex, Typography } from "antd";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,22 +22,20 @@ export default function SurveyStart() {
             <span>ESTIMATE TIME 1:20m</span>
           </Typography.Title>
         </Flex>
-        <Flex className="user-avg">
-          <Image
-            src={"/servey-img.png"}
-            alt={"logo"}
-            height={250}
-            width={250}
-          />
-          <span>85.7</span>
-        </Flex>
+        <ImageWithAverage
+          src="/servey-img.png"
+          alt="Survey Image"
+          height={250}
+          width={250}
+          average={85.7}
+        />
         <Flex vertical align="center">
           <Typography.Title level={3}>Jason Shaun</Typography.Title>
           <Typography.Paragraph className="text-center">
             Become more accessible to thousands <br /> for college coaches
           </Typography.Paragraph>
         </Flex>
-        
+
         <Flex vertical align="center" className="mt-5 mb-5">
           <Image src={"/flag.svg"} alt={"flag"} height={116} width={147} />
           <Flex className="set-position">

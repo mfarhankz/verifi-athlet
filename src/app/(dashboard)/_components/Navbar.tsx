@@ -13,6 +13,10 @@ const items: MenuProps["items"] = [
   },
   {
     key: "2",
+    label: <Link href="/profile">Profile</Link>,
+  },
+  {
+    key: "3",
     label: <Link href="/settings">Settings</Link>,
   },
 ];

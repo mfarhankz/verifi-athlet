@@ -1,12 +1,31 @@
 "use client";
 
-import { Flex, Progress, Skeleton, Tooltip } from "antd";
+import {
+  Button,
+  Dropdown,
+  Flex,
+  Input,
+  Progress,
+  Skeleton,
+  Tooltip,
+  Typography,
+} from "antd";
 import Image from "next/image";
 import PlayerList from "../_components/PlayerList";
 import PlayerInformation from "../_components/PlayerInformation";
 import Link from "next/link";
+import ImageWithAverage from "../_components/ImageWithAverage";
 
 export default function PrePortalSearch() {
+  const dropdownContent = () => (
+    <div className="dropdown-menu">
+    <ul>
+      <li>
+      <Link href="/"><i className="icon-archive-2"></i></Link>
+      </li>
+    </ul>
+    </div>
+  );
   return (
     <Flex>
       <div className="main-container">
@@ -14,7 +33,13 @@ export default function PrePortalSearch() {
           <div className="col-span-9 card">
             <div className="flex w-100">
               <div className="player-img">
-                <Image src="/plyer-b.png" alt="abc" width={250} height={250} />
+                <ImageWithAverage
+                  src="/plyer-b.png"
+                  alt="Survey Image"
+                  height={250}
+                  width={250}
+                  average={85.7}
+                />
                 <ul>
                   <li>
                     <i className="icon-teacher"></i> Jackson HS
@@ -32,10 +57,24 @@ export default function PrePortalSearch() {
                 </ul>
               </div>
               <div className="detail-box">
-                <span className="badge">
-                  <i className="icon-check-2"></i>Active
-                </span>
-                ID AX30902
+                <Flex justify="space-between" align="center">
+                  <Flex>
+                    <span className="badge">
+                      <i className="icon-check-2"></i>Active
+                    </span>
+                    ID AX30902
+                  </Flex>
+                  <Flex>
+                    <Dropdown
+                      dropdownRender={dropdownContent}
+                      trigger={["click"]}
+                    >
+                      <Button className="select-dropdown">
+                        <i className="icon-menu-1"></i>
+                      </Button>
+                    </Dropdown>
+                  </Flex>
+                </Flex>
                 <h3>
                   Bryce Shaun
                   <span className="rating">
