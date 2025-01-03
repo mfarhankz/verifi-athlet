@@ -1,10 +1,10 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import { Button, Flex, Input, Select, Switch, Typography } from "antd";
+import { Button, Flex, Select, Switch, Typography } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import ImageWithAverage from "../_components/ImageWithAverage";
+import CommentBox from "../_components/CommentBox";
 
 export default function Profile() {
   const handleChange = (value: string) => {
@@ -13,6 +13,7 @@ export default function Profile() {
   const onChange = (checked: boolean) => {
     console.log(`switch to ${checked}`);
   };
+
   return (
     <div className="main-container">
       <Flex vertical className="profile card">
@@ -180,58 +181,7 @@ export default function Profile() {
             </Flex>
           </div>
           <div className="col-span-12 mt-3">
-            <Flex className="mb-3">
-              <Input placeholder="Write new..." className="w-full m-auto" />
-            </Flex>
-            <ul className="comments">
-              <li>
-                <Flex>
-                  <Typography.Text className="jm mr-3">JM</Typography.Text>
-                </Flex>
-                <Flex vertical className="w-full">
-                  <Flex justify="space-between">
-                    <Typography.Title level={4}>Jason Masum</Typography.Title>
-                    <Typography.Text className="edit-menu">
-                      Edited 04/19/2024 4:59 PM
-                      <i className="icon-menu-1 ms-2 text-xl"></i>
-                    </Typography.Text>
-                  </Flex>
-                  <Flex>
-                    <Typography.Paragraph className="jm-p">
-                      Adding a subtle animation here could help highlight
-                      important actions and make it more engaging.
-                    </Typography.Paragraph>
-                  </Flex>
-                </Flex>
-              </li>
-              <li>
-                <Flex>
-                  <Typography.Text className="jm mr-3">JM</Typography.Text>
-                </Flex>
-                <Flex vertical className="w-full">
-                  <Flex justify="space-between">
-                    <Typography.Title level={4}>Jason Masum</Typography.Title>
-                    <Typography.Text className="edit-menu">
-                      Edited 04/19/2024 4:59 PM
-                      <i className="icon-menu-1 ms-2 text-xl"></i>
-                    </Typography.Text>
-                  </Flex>
-                  <Flex>
-                    <Typography.Paragraph className="jm-p">
-                      I am a fan! <br />
-                      These work better than i thought they would. I have never
-                      been big into the Kardashian brands so i was hesitant to
-                      try, but I am glad I did. I take two capsules with
-                      breakfast and i dont have the urge to snack throughout the
-                      day. Also has me eating lunch later and eating something
-                      small for dinner. I am still on my first month but did the
-                      subscription for three months for the discount. I have got
-                      there
-                    </Typography.Paragraph>
-                  </Flex>
-                </Flex>
-              </li>
-            </ul>
+            <CommentBox />
           </div>
         </div>
         <Flex className="flex justify-center gap-2">

@@ -4,11 +4,10 @@ import {
   Button,
   Dropdown,
   Flex,
-  Input,
+  MenuProps,
   Progress,
   Skeleton,
   Tooltip,
-  Typography,
 } from "antd";
 import Image from "next/image";
 import PlayerList from "../_components/PlayerList";
@@ -17,15 +16,37 @@ import Link from "next/link";
 import ImageWithAverage from "../_components/ImageWithAverage";
 
 export default function PrePortalSearch() {
-  const dropdownContent = () => (
-    <div className="dropdown-menu">
-    <ul>
-      <li>
-      <Link href="/"><i className="icon-archive-2"></i></Link>
-      </li>
-    </ul>
-    </div>
-  );
+  const items: MenuProps["items"] = [
+     {
+       label: <a href="#">Archive</a>,
+       key: "0",
+       icon: <i className="icon-archive-2"></i>,
+     },
+     {
+       type: "divider",
+     },
+     {
+       label: <a href="#">Mark as Read</a>,
+       key: "1",
+       icon: <i className="icon-eye"></i>,
+     },
+     {
+       type: "divider",
+     },
+     {
+       label: <a href="#">Add to Board</a>,
+       key: "3",
+       icon: <i className="icon-profile-add"></i>,
+     },
+     {
+       type: "divider",
+     },
+     {
+       label: <a href="#">Compare Athlete</a>,
+       key: "4",
+       icon: <i className="icon-profile-2user"></i>,
+     },
+   ];
   return (
     <Flex>
       <div className="main-container">
@@ -65,10 +86,7 @@ export default function PrePortalSearch() {
                     ID AX30902
                   </Flex>
                   <Flex>
-                    <Dropdown
-                      dropdownRender={dropdownContent}
-                      trigger={["click"]}
-                    >
+                    <Dropdown menu={{ items }} trigger={["click"]}>
                       <Button className="select-dropdown">
                         <i className="icon-menu-1"></i>
                       </Button>

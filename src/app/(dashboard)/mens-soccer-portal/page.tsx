@@ -55,7 +55,7 @@ export default function MensSoccerPortal() {
         <div className="profile-list">
           <ImageWithAverage
             src={record.image as string}
-            alt={record.name}
+            alt={record.fname}
             size="small"
             height={90}
             width={90}
@@ -63,7 +63,7 @@ export default function MensSoccerPortal() {
           />
           <div className="pro-detail">
             <h6 className="flex">
-              {record.name}
+              {record.fname + " " + record.lname} 
               <span className="flex ml-3">
                 <Image
                   src={
@@ -73,7 +73,7 @@ export default function MensSoccerPortal() {
                       ? "/success-star.svg"
                       : "/warning-star.svg"
                   }
-                  alt={record.name}
+                  alt={record.fname}
                   width={18}
                   height={18}
                   className="mr-1"
@@ -220,8 +220,8 @@ export default function MensSoccerPortal() {
       );
     },
     getCheckboxProps: (record: DataType) => ({
-      disabled: record.name === "Disabled User",
-      name: record.name,
+      disabled: record.fname === "Disabled User",
+      name: record.fname,
     }),
   };
 
@@ -303,7 +303,7 @@ export default function MensSoccerPortal() {
           <Flex vertical>
             <Image
               src={selectedPlyer.imageLarge}
-              alt={selectedPlyer.name}
+              alt={selectedPlyer.fname}
               width={412}
               height={330}
             />
@@ -326,7 +326,7 @@ export default function MensSoccerPortal() {
               <span>
                 <Image
                   src="/b.svg"
-                  alt={selectedPlyer.name}
+                  alt={selectedPlyer.fname}
                   width={18}
                   height={18}
                 />
@@ -341,7 +341,7 @@ export default function MensSoccerPortal() {
                 <small className="flex">
                   <Image
                     src="/player-icon.svg"
-                    alt={selectedPlyer.name}
+                    alt={selectedPlyer.fname}
                     width={18}
                     height={18}
                     className="mr-1"

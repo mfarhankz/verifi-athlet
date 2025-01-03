@@ -338,13 +338,9 @@ h2.setting-heading {
   );
 }
 .custom-h3 {
-  font-weight: 400 !important;
-  font-size: 32px !important;
+  font-weight: 600 !important;
+  font-size: 26px !important;
   margin-bottom: 0px !important;
-  span {
-    font-weight: 300 !important;
-    font-size: 32px !important;
-  }
 }
 .team-table {
   width: 100%;
@@ -359,13 +355,10 @@ h2.setting-heading {
     font-weight: 500 !important;
   }
   article.ant-typography {
-    font-size: 32px;
+    font-size: 26px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 30px;
-    span {
-      font-weight: 400;
-    }
   }
 }
 .remove {

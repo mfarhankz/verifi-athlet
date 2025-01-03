@@ -94,36 +94,33 @@
             font-size: 18px;
         }
     }
-    .icon-send-1{
-        top: 90px;
-        right: 10px;
-    }
-    .notes {
-        background-color: #fffcec;
-        padding: 20px 15px;
-        hr{
-            color: var(--warning);
-            margin: 20px 0px;
-        }
+    
+    // .notes {
+    //     background-color: #fffcec;
+    //     padding: 20px 15px;
+    //     hr{
+    //         color: var(--warning);
+    //         margin: 20px 0px;
+    //     }
         
-        .jm {
-            color: var(--primary);
-            font-size: 18px;
-            opacity: 1;
-            font-weight: 600;
-            background: var(--warning);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        h6{
-            font-size: 18px ;
-            font-weight: 600;
-        }
-        span{
-            font-weight: 400;
-            font-style: 14px;
-        }
+    //     .jm {
+    //         color: var(--primary);
+    //         font-size: 18px;
+    //         opacity: 1;
+    //         font-weight: 600;
+    //         background: var(--warning);
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: center;
+    //     }
+    //     h6{
+    //         font-size: 18px ;
+    //         font-weight: 600;
+    //     }
+    //     span{
+    //         font-weight: 400;
+    //         font-style: 14px;
+    //     }
 
-    }
+    // }
 }

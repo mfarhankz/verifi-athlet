@@ -2,9 +2,10 @@
 
 
 import type { TabsProps } from "antd";
-import { Table, Tabs } from "antd";
+import { Flex, Table, Tabs } from "antd";
 import Image from "next/image";
 import type { TableColumnsType } from "antd";
+import CommentBox from "./CommentBox";
 
 const onChange = (key: string) => {
   console.log(key);
@@ -618,44 +619,10 @@ const Survey = () => (
   </div>
 );
 const Notes = () => (
-  <div>
+  <Flex vertical>
     <h3>Notes</h3>
-    <div>
-    <input className="border w-full my-4 p-2 text-lg relative" type="text" name="" id="" placeholder="Write new..." />
-    <i className="icon-send-1 absolute text-lg"></i>
-    </div>
-   <div className="notes">
-    <div className="flex">
-        <span className="h-9 w-9 jm mr-3 mt-3">JM</span>
-        <div className="w-full">
-         <div className="flex items-center justify-between">
-         <h6 className="w-[max-content]">Jason Masum</h6>
-         <span className="flex items-center">Edited  04/19/2024  4:59 PM <i className="icon-menu-1 ml-1"></i></span>
-         </div>
-            <p className="m-0">Adding a subtle animation here could help highlight important actions and make it more engaging.</p>
-        </div>
-    </div>
-    <hr />
-    <div className="flex">
-        <span className="h-9 w-9 jm mr-3 mt-3">JM</span>
-        <div className="w-full">
-         <div className="flex items-center justify-between">
-         <h6 className="w-[max-content]">Jason Masum</h6>
-         <span className="flex items-center">Edited  04/19/2024  4:59 PM <i className="icon-menu-1 ml-1"></i></span>
-         </div>
-            <p className="m-0">I&apos;m a fan! <br /> These work better than i thought they would. I&apos;ve never been big into the Kardashian brands so i was hesitant to try, but I&apos;m glad I did. I take two capsules with breakfast and i don&apos;t have the urge to snack throughout the day. Also has me eating lunch later and eating something small for dinner. I&apos;m still on my first month but did the subscription for three months for the discount. I&apos;ve got there</p>
-        </div>
-    </div>
-    <hr />
-    <div className="flex">
-        <span className="h-9 w-9 jm mr-3 mt-3">AC</span>
-        <div className="w-full">
-         <h6 className="w-[max-content]">Alex Cook</h6>
-            <p className="m-0">These work better than i thought they would. I&apos;ve never been big into the Kardashian brands so i was hesitant to try, but I&apos;m glad I did. I take two capsules with breakfast and i don&apos;t have the urge to snack throughout the day. Also has me eating lunch.</p>
-        </div>
-    </div>
-   </div>
-  </div>
+    <CommentBox />
+  </Flex>
 );
 
 const items: TabsProps["items"] = [

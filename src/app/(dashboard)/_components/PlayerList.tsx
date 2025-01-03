@@ -1,5 +1,4 @@
 import { Typography } from "antd";
-import Image from "next/image";
 import UserShortInfo from "./UserShortInfo";
 import { data } from '@/apis/data';
 
