@@ -40,6 +40,7 @@ import {coordinateGetter as multipleContainersCoordinateGetter} from './multiple
 import {Item, Container, ContainerProps} from '../../components';
 
 import {createRange} from '../../utilities';
+import { dataMap } from '@/apis/data';
 
 const animateLayoutChanges: AnimateLayoutChanges = (args) =>
   defaultAnimateLayoutChanges({...args, wasDragging: true});
@@ -131,7 +132,7 @@ interface Props {
   }): React.CSSProperties;
   wrapperStyle?(args: {index: number}): React.CSSProperties;
   itemCount?: number;
-  items?: Items;
+  items?: Items | Array<{ id: string; div: string; [key: string]: any }>;
   handle?: boolean;
   renderItem?: any;
   strategy?: SortingStrategy;
@@ -140,6 +141,16 @@ interface Props {
   trashable?: boolean;
   scrollable?: boolean;
   vertical?: boolean;
+  itemData?: {
+    fname?: string;
+    lname?: string;
+    image?: string;
+    avg?: number;
+    rating?: number;
+    academy?: string;
+    school?: string;
+    schoolIcon?: string;
+  }; 
 }
 
 export const TRASH_ID = 'void';
@@ -165,15 +176,28 @@ function MultipleContainers({
   vertical = false,
   scrollable,
 }: Props) {
-  const [items, setItems] = useState<Items>(
-    () =>
+  const [items, setItems] = useState<Items>(() => {
+    if (Array.isArray(initialItems)) {
+      // Transform the array of objects into the required `Items` format
+      return initialItems.reduce((acc, item) => {
+        const containerKey = item.position || "Default"; // Group items by `position` or use "Default"
+        if (!acc[containerKey]) {
+          acc[containerKey] = [];
+        }
+        acc[containerKey].push(item.id); // Store `id` as the value
+        return acc;
+      }, {} as Items);
+    }
+  
+    return (
       initialItems ?? {
         A: createRange(itemCount, (index) => `A${index + 1}`),
         B: createRange(itemCount, (index) => `B${index + 1}`),
         C: createRange(itemCount, (index) => `C${index + 1}`),
         D: createRange(itemCount, (index) => `D${index + 1}`),
       }
-  );
+    );
+  });
   const [containers, setContainers] = useState(
     Object.keys(items) as UniqueIdentifier[]
   );
@@ -448,7 +472,8 @@ function MultipleContainers({
         style={{
           display: 'inline-grid',
           boxSizing: 'border-box',
-          padding: 20,
+          padding: 0,
+          gap: 15,
           gridAutoFlow: vertical ? 'row' : 'column',
         }}
       >
@@ -464,7 +489,7 @@ function MultipleContainers({
             <DroppableContainer
               key={containerId}
               id={containerId}
-              label={minimal ? undefined : `Column ${containerId}`}
+              label={minimal ? undefined : `${containerId}`}
               columns={columns}
               items={items[containerId]}
               scrollable={scrollable}
@@ -474,6 +499,7 @@ function MultipleContainers({
             >
               <SortableContext items={items[containerId]} strategy={strategy}>
                 {items[containerId].map((value, index) => {
+                  const itemData = dataMap[value];
                   return (
                     <SortableItem
                       disabled={isSortingContainer}
@@ -483,7 +509,15 @@ function MultipleContainers({
                       handle={handle}
                       style={getItemStyles}
                       wrapperStyle={wrapperStyle}
-                      renderItem={renderItem}
+                      renderItem={({ listeners, ref, style }) => (
+                        <Item
+                          value={value}
+                          listeners={listeners}
+                          ref={ref}
+                          style={style}
+                          itemData={itemData} // Pass the correct data
+                        />
+                      )}
                       containerId={containerId}
                       getIndex={getIndex}
                     />
@@ -522,6 +556,8 @@ function MultipleContainers({
   );
 
   function renderSortableItemDragOverlay(id: UniqueIdentifier) {
+    const itemData = dataMap[id];
+    console.log("itemData:", itemData);
     return (
       <Item
         value={id}
@@ -538,6 +574,7 @@ function MultipleContainers({
         color={getColor(id)}
         wrapperStyle={wrapperStyle({index: 0})}
         renderItem={renderItem}
+        itemData={itemData}
         dragOverlay
       />
     );

@@ -38,8 +38,8 @@ export default function UserShortInfo({
         size="small"
         average={average}
       />
-      <div className="ml-2">
-        <Flex gap={15}>
+      <div className="ml-2 user-detail">
+        <Flex gap={12}>
           <Typography.Title level={4}>
             <span>{fName}</span>
             {lName}

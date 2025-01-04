@@ -6,6 +6,8 @@ import type {Transform} from '@dnd-kit/utilities';
 import {Handle, Remove} from './components';
 
 import styles from './Item.module.scss';
+import UserShortInfo from '@/app/(dashboard)/_components/UserShortInfo';
+import { json } from 'stream/consumers';
 
 export interface Props {
   dragOverlay?: boolean;
@@ -24,6 +26,16 @@ export interface Props {
   transition?: string | null;
   wrapperStyle?: React.CSSProperties;
   value: React.ReactNode;
+  itemData?: {
+    fname?: string;
+    lname?: string;
+    image?: string;
+    avg?: number;
+    rating?: number;
+    academy?: string;
+    school?: string;
+    schoolIcon?: string;
+  }; // Add other fields as needed
   onRemove?(): void;
   renderItem?(args: {
     dragOverlay: boolean;
@@ -37,6 +49,7 @@ export interface Props {
     transform: Props['transform'];
     transition: Props['transition'];
     value: Props['value'];
+    itemData: Props['itemData'];
   }): React.ReactElement;
 }
 
@@ -62,7 +75,9 @@ export const Item = React.memo(
         transform,
         value,
         wrapperStyle,
+        itemData,
         ...props
+        
       },
       ref
     ) => {
@@ -91,8 +106,10 @@ export const Item = React.memo(
           transform,
           transition,
           value,
+          itemData
         })
       ) : (
+        
         <li
           className={classNames(
             styles.Wrapper,
@@ -124,6 +141,7 @@ export const Item = React.memo(
           }
           ref={ref}
         >
+          
           <div
             className={classNames(
               styles.Item,
@@ -139,7 +157,22 @@ export const Item = React.memo(
             {...props}
             tabIndex={!handle ? 0 : undefined}
           >
-            {value}
+                <UserShortInfo
+                  src={itemData?.image || "/pl1.png"}
+                  height={80}
+                  width={80}
+                  fName={itemData?.fname || ""}
+                  lName={itemData?.lname || ""}
+                  average={itemData?.avg || 0}
+                  rating={itemData?.rating || 0}
+                  title={itemData?.academy || ""}
+                  school={itemData?.school || ""}
+                  schoolIcon={itemData?.schoolIcon || "/b.svg"}
+                />
+                <div className='flex items-center justify-between w-[100%] px-2'>
+                  <span>6'.2", 225 lbs</span>
+                  <span>James Alex</span>
+                </div>
             <span className={styles.Actions}>
               {onRemove ? (
                 <Remove className={styles.Remove} onClick={onRemove} />

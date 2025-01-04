@@ -24,6 +24,7 @@ export interface DataType {
   s: string;
   h: string;
   direction: string;
+  position?: string;
 }
 export const data: DataType[] = [
   {
@@ -52,6 +53,7 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "WR"
   },
   {
     key: "2",
@@ -79,6 +81,7 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "WR"
   },
   {
     key: "3",
@@ -106,6 +109,7 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "WR"
   },
   {
     key: "4",
@@ -133,6 +137,7 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "WR"
   },
   {
     key: "5",
@@ -160,6 +165,7 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "QB"
   },
   {
     key: "6",
@@ -187,6 +193,7 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "QB"
   },
   {
     key: "7",
@@ -214,6 +221,7 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "QB"
   },
   {
     key: "8",
@@ -241,6 +249,7 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "RB"
   },
   {
     key: "9",
@@ -268,6 +277,7 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "RB"
   },
   {
     key: "10",
@@ -295,6 +305,7 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "RB"
   },
   {
     key: "11",
@@ -322,6 +333,7 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "TE"
   },
   {
     key: "12",
@@ -349,5 +361,12 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
+    position: "OGC"
   },
 ];
+
+
+export const dataMap = data.reduce((map, item) => {
+  map[item.id] = item;
+  return map;
+}, {} as Record<string, typeof data[0]>);

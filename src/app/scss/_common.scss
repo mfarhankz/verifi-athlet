@@ -54,6 +54,7 @@
     }
   }
 
+  
   span {
     position: absolute;
     bottom: -1px;
@@ -85,6 +86,19 @@
       color: var(--primary);
     }
   }
+}
+
+.user-detail {
+    text-align: left;
+    min-width: 217px;
+    .ant-typography {
+        margin: 0 !important;
+        display: flex;
+        align-items: center;
+        img, span {
+            margin-right: 5px;
+        }
+      }
 }
 
 .compare-player {
