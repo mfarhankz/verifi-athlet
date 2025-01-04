@@ -1,7 +1,10 @@
-"use client";
+
+import MultipleContainers from "@/app/dndkit/presets/Sortable/MultipleContainers";
 
 export default function RecruitingBoard() {
     return(
-        <div>Recruiting Board</div>
+        <div className="main-container">
+            <MultipleContainers itemCount={5} />
+        </div>
     );
 }
