@@ -173,6 +173,7 @@ function MultipleContainers({
         B: createRange(itemCount, (index) => `B${index + 1}`),
         C: createRange(itemCount, (index) => `C${index + 1}`),
         D: createRange(itemCount, (index) => `D${index + 1}`),
+        E: createRange(itemCount, (index) => `E${index + 1}`),
       }
   );
   const [containers, setContainers] = useState(

@@ -6,6 +6,7 @@ import classNames from "classnames";
 import { Handle, Remove } from "../Item";
 
 import styles from "./Container.module.scss";
+import { Divider } from "antd";
 
 export interface Props {
   children: React.ReactNode;
@@ -82,12 +83,14 @@ export const Container = forwardRef<HTMLDivElement, Props>(
               <span>Budget</span>
               <span>Diff</span>
             </div>
+            <Divider />
             <div className="flex items-center justify-between w-[100%]">
               <span>Players</span>
               <span>4</span>
               <span>0</span>
               <span>0</span>
             </div>
+            <Divider />
             <div className="flex items-center justify-between w-[100%]">
               <span>School</span>
               <span>4</span>
