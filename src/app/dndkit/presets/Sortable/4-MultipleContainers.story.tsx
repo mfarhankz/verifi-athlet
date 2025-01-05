@@ -1,11 +1,11 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable import/no-anonymous-default-export */
 import React from 'react';
 import type {CancelDrop, UniqueIdentifier} from '@dnd-kit/core';
 import {rectSortingStrategy} from '@dnd-kit/sortable';
 
+import MultipleContainers, {TRASH_ID} from './MultipleContainers';
+
 import {ConfirmModal} from '../../components';
-import MultipleContainers, { TRASH_ID } from './MultipleContainers';
 
 export default {
   title: 'Presets/Sortable/Multiple Containers',
@@ -58,7 +58,7 @@ export const TrashableItems = ({confirmDrop}: {confirmDrop: boolean}) => {
           onConfirm={() => resolveRef.current?.(true)}
           onDeny={() => resolveRef.current?.(false)}
         >
-          Are you sure you want to delete "{activeId}"?
+          Are you sure you want to delete {activeId}?
         </ConfirmModal>
       )}
     </>

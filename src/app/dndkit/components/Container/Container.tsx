@@ -1,10 +1,11 @@
+/* eslint-disable react/display-name */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, {forwardRef} from 'react';
-import classNames from 'classnames';
+import React, { forwardRef } from "react";
+import classNames from "classnames";
 
-import {Handle, Remove} from '../Item';
+import { Handle, Remove } from "../Item";
 
-import styles from './Container.module.scss';
+import styles from "./Container.module.scss";
 
 export interface Props {
   children: React.ReactNode;
@@ -22,10 +23,7 @@ export interface Props {
   onRemove?(): void;
 }
 
-export const Container = forwardRef<
-  HTMLDivElement | HTMLButtonElement,
-  Props
->(
+export const Container = forwardRef<HTMLDivElement, Props>(
   (
     {
       children,
@@ -45,20 +43,19 @@ export const Container = forwardRef<
     }: Props,
     ref
   ) => {
-    // Determine the element type
-    const Component = onClick ? 'button' : 'div';
-
-    // Use a conditional cast for the ref
+    const Component = onClick ? "button" : "div";
     const castedRef = ref as React.Ref<HTMLButtonElement & HTMLDivElement>;
 
     return (
       <Component
         {...props}
         ref={castedRef}
-        style={{
-          ...style,
-          '--columns': columns,
-        } as React.CSSProperties}
+        style={
+          {
+            ...style,
+            "--columns": columns,
+          } as React.CSSProperties
+        }
         className={classNames(
           styles.Container,
           unstyled && styles.unstyled,
@@ -72,12 +69,32 @@ export const Container = forwardRef<
         tabIndex={onClick ? 0 : undefined}
       >
         {label ? (
-          <div className={styles.Header}>
-            {label}
-            <div className={styles.Actions}>
-              {onRemove ? <Remove onClick={onRemove} /> : undefined}
-              <Handle {...handleProps} />
+          <div className={`colum-header ${styles.Header}`}>
+            <div className="flex items-center justify-between w-[100%] head-name">
+              <span>{label}</span>
+              <div className={styles.Actions}>
+                {onRemove ? <Remove onClick={onRemove} /> : undefined}
+                <Handle {...handleProps} />
+              </div>
             </div>
+            <div className="flex items-center justify-between w-[100%]">
+              <span>Actual</span>
+              <span>Budget</span>
+              <span>Diff</span>
+            </div>
+            <div className="flex items-center justify-between w-[100%]">
+              <span>Players</span>
+              <span>4</span>
+              <span>0</span>
+              <span>0</span>
+            </div>
+            <div className="flex items-center justify-between w-[100%]">
+              <span>School</span>
+              <span>4</span>
+              <span>4</span>
+              <span>0</span>
+            </div>
+            
           </div>
         ) : null}
         {placeholder ? children : <ul>{children}</ul>}
@@ -85,6 +102,3 @@ export const Container = forwardRef<
     );
   }
 );
-
-// Add display name for debugging
-Container.displayName = 'Container';

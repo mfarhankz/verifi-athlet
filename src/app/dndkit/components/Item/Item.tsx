@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, {useEffect} from 'react';
 import classNames from 'classnames';
@@ -22,22 +21,12 @@ export interface Props {
   index?: number;
   fadeIn?: boolean;
   transform?: Transform | null;
-  listeners?: any;
+  listeners?: DraggableSyntheticListeners;
   sorting?: boolean;
   style?: React.CSSProperties;
   transition?: string | null;
   wrapperStyle?: React.CSSProperties;
   value: React.ReactNode;
-  itemData?: {
-    fname?: string;
-    lname?: string;
-    image?: string;
-    avg?: number;
-    rating?: number;
-    academy?: string;
-    school?: string;
-    schoolIcon?: string;
-  }; // Add other fields as needed
   onRemove?(): void;
   renderItem?(args: {
     dragOverlay: boolean;
@@ -46,12 +35,11 @@ export interface Props {
     index: number | undefined;
     fadeIn: boolean;
     listeners: DraggableSyntheticListeners;
-    ref: any;
+    ref: React.Ref<HTMLElement>;
     style: React.CSSProperties | undefined;
     transform: Props['transform'];
     transition: Props['transition'];
     value: Props['value'];
-    itemData: Props['itemData'];
   }): React.ReactElement;
 }
 
@@ -77,9 +65,7 @@ export const Item = React.memo(
         transform,
         value,
         wrapperStyle,
-        itemData,
         ...props
-        
       },
       ref
     ) => {
@@ -108,10 +94,8 @@ export const Item = React.memo(
           transform,
           transition,
           value,
-          itemData
         })
       ) : (
-        
         <li
           className={classNames(
             styles.Wrapper,
@@ -143,7 +127,6 @@ export const Item = React.memo(
           }
           ref={ref}
         >
-          
           <div
             className={classNames(
               styles.Item,
@@ -159,22 +142,21 @@ export const Item = React.memo(
             {...props}
             tabIndex={!handle ? 0 : undefined}
           >
-                <UserShortInfo
-                  src={itemData?.image || "/pl1.png"}
-                  height={80}
-                  width={80}
-                  fName={itemData?.fname || ""}
-                  lName={itemData?.lname || ""}
-                  average={itemData?.avg || 0}
-                  rating={itemData?.rating || 0}
-                  title={itemData?.academy || ""}
-                  school={itemData?.school || ""}
-                  schoolIcon={itemData?.schoolIcon || "/b.svg"}
-                />
-                <div className='flex items-center justify-between w-[100%] px-2'>
-                  <span>6'.2", 225 lbs</span>
-                  <span>James Alex</span>
-                </div>
+            {/* {value} */}
+
+             <UserShortInfo
+                src="/pl3.png"
+                height={80}
+                width={80}
+                fName="Christian"
+                lName="George"
+                average={97.3}
+                rating={4.6}
+                title={'Senior Team Manager ' + value}
+                school="Kansas City School"
+                schoolIcon="/b.svg"
+              />
+
             <span className={styles.Actions}>
               {onRemove ? (
                 <Remove className={styles.Remove} onClick={onRemove} />

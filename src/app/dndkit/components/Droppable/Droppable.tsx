@@ -1,8 +1,8 @@
 import React from 'react';
-import { useDroppable, UniqueIdentifier } from '@dnd-kit/core';
+import {useDroppable, UniqueIdentifier} from '@dnd-kit/core';
 import classNames from 'classnames';
 
-import { droppable } from './droppable-svg';
+import {droppable} from './droppable-svg';
 import styles from './Droppable.module.scss';
 
 interface Props {
@@ -11,8 +11,8 @@ interface Props {
   id: UniqueIdentifier;
 }
 
-export function Droppable({ children, id, dragging }: Props) {
-  const { isOver, setNodeRef } = useDroppable({
+export function Droppable({children, id, dragging}: Props) {
+  const {isOver, setNodeRef} = useDroppable({
     id,
   });
 
@@ -23,7 +23,7 @@ export function Droppable({ children, id, dragging }: Props) {
         styles.Droppable,
         { [styles.over]: isOver },
         { [styles.dragging]: dragging },
-        { [styles.dropped]: !!children } // Ensure children is treated as a boolean
+        { [styles.dropped]: !!children }
       )}
       aria-label="Droppable region"
     >

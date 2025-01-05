@@ -58,7 +58,7 @@
   span {
     position: absolute;
     bottom: -1px;
-    left: -2px;
+    left: -1px;
     z-index: 9;
     font-size: 20px;
     font-style: normal;
@@ -349,4 +349,41 @@
       }
     }
   }
+}
+
+.colum-header {
+    background: linear-gradient(81deg, #FAFFD6 0%, #FFF 100%);
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    margin-top: 39px;
+    .head-name {
+        position: absolute;
+        top: -39px;
+        padding: 0;
+        span {
+            background-color: #CF0;
+            color: var(--primary);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: -0.56px;
+            padding: 5px 10px 5px 15px;
+            position: relative;
+            z-index: 1;
+            &::after {
+                content: '';
+                background-color: #CF0;
+                position: absolute;
+                top: 0;
+                left: 10px;
+                width: 100%;
+                height: 100%;
+                transform: skew(20deg);
+                z-index: -1;
+            }
+        }
+      }
 }
