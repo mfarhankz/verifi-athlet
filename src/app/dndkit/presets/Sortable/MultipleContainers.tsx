@@ -166,19 +166,49 @@ function MultipleContainers({
   vertical = false,
   scrollable,
 }: Props) {
-  const [items, setItems] = useState<Items>(
-    () =>
+  const [items, setItems] = useState<Items>(() => {
+    if (Array.isArray(initialItems)) {
+      return initialItems.reduce((acc, item) => {
+        const containerKey = item.position;
+        if (!acc[containerKey]) {
+          acc[containerKey] = [];
+        }
+        acc[containerKey].push(item.id);
+        return acc;
+      }, {} as Items);
+    }
+  
+    return (
       initialItems ?? {
         A: createRange(itemCount, (index) => `A${index + 1}`),
         B: createRange(itemCount, (index) => `B${index + 1}`),
         C: createRange(itemCount, (index) => `C${index + 1}`),
         D: createRange(itemCount, (index) => `D${index + 1}`),
-        E: createRange(itemCount, (index) => `E${index + 1}`),
       }
-  );
+    );
+  });
+
+  console.log('items', items);
+
+  const [customItems] = useState<Items>(() => {
+    if (Array.isArray(initialItems)) {
+      return initialItems.reduce((acc, item) => {
+        const containerKey = item.position;
+        if (!acc[containerKey]) {
+          acc[containerKey] = [];
+        }
+        acc[containerKey].push(item);
+        return acc;
+      }, {} as Items);
+    }
+  });
+
   const [containers, setContainers] = useState(
     Object.keys(items) as UniqueIdentifier[]
   );
+  console.log('customItems', customItems);
+  console.log('items', items);
+  console.log('containers', containers);
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null);
   const lastOverId = useRef<UniqueIdentifier | null>(null);
   const recentlyMovedToNewContainer = useRef(false);
@@ -466,7 +496,7 @@ function MultipleContainers({
             <DroppableContainer
               key={containerId}
               id={containerId}
-              label={minimal ? undefined : `C${containerId}`}
+              label={minimal ? undefined : `${containerId}`}
               columns={columns}
               items={items[containerId]}
               scrollable={scrollable}
@@ -476,10 +506,12 @@ function MultipleContainers({
             >
               <SortableContext items={items[containerId]} strategy={strategy}>
                 {items[containerId].map((value, index) => {
+                  
                   return (
                     <SortableItem
                       disabled={isSortingContainer}
                       key={value}
+                      data={customItems}
                       id={value}
                       index={index}
                       handle={handle}
@@ -529,6 +561,7 @@ function MultipleContainers({
       <Item
         value={id}
         handle={handle}
+        data={customItems}
         style={getItemStyles({
           containerId: findContainer(id) as UniqueIdentifier,
           overIndex: -1,
@@ -561,6 +594,7 @@ function MultipleContainers({
           <Item
             key={item}
             value={item}
+            data={customItems}
             handle={handle}
             style={getItemStyles({
               containerId,
@@ -653,6 +687,7 @@ interface SortableItemProps {
   containerId: UniqueIdentifier;
   id: UniqueIdentifier;
   index: number;
+  data: any;
   handle: boolean;
   disabled?: boolean;
   style(args: any): React.CSSProperties;
@@ -665,6 +700,7 @@ function SortableItem({
   disabled,
   id,
   index,
+  data,
   handle,
   renderItem,
   style,
@@ -692,6 +728,7 @@ function SortableItem({
     <Item
       ref={disabled ? undefined : setNodeRef}
       value={id}
+      data={data}
       dragging={isDragging}
       sorting={isSorting}
       handle={handle}

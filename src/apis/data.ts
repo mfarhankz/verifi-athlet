@@ -25,6 +25,8 @@ export interface DataType {
   h: string;
   direction: string;
   position?: string;
+  tier?: number;
+  tierColor: string;
 }
 export const data: DataType[] = [
   {
@@ -53,7 +55,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "WR"
+    position: "WR",
+    tier: 2,
+tierColor: "#36C5F0"
   },
   {
     key: "2",
@@ -81,7 +85,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "WR"
+    position: "WR",
+    tier: 3,
+tierColor: "#FF24BA"
   },
   {
     key: "3",
@@ -109,7 +115,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "WR"
+    position: "WR",
+    tier: 1,
+tierColor: "#7363BC"
   },
   {
     key: "4",
@@ -137,7 +145,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "WR"
+    position: "WR",
+    tier: 1,
+tierColor: "#7363BC"
   },
   {
     key: "5",
@@ -165,7 +175,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "QB"
+    position: "QB",
+    tier: 2,
+tierColor: "#36C5F0"
   },
   {
     key: "6",
@@ -193,7 +205,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "QB"
+    position: "QB",
+    tier: 2,
+tierColor: "#36C5F0"
   },
   {
     key: "7",
@@ -221,7 +235,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "QB"
+    position: "QB",
+    tier: 2,
+tierColor: "#36C5F0"
   },
   {
     key: "8",
@@ -249,7 +265,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "RB"
+    position: "RB",
+    tier: 2,
+tierColor: "#36C5F0"
   },
   {
     key: "9",
@@ -277,7 +295,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "RB"
+    position: "RB",
+    tier: 3,
+tierColor: "#FF24BA"
   },
   {
     key: "10",
@@ -305,7 +325,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "RB"
+    position: "RB",
+    tier: 3,
+tierColor: "#FF24BA"
   },
   {
     key: "11",
@@ -333,7 +355,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "TE"
+    position: "TE",
+    tier: 2,
+tierColor: "#36C5F0"
   },
   {
     key: "12",
@@ -361,7 +385,9 @@ export const data: DataType[] = [
     s: "540",
     h: "Y",
     direction: "Flat",
-    position: "OGC"
+    position: "OGC",
+    tier: 1,
+tierColor: "#7363BC"
   },
 ];
 

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, {useEffect} from 'react';
+import React, {useEffect, useMemo} from 'react';
 import classNames from 'classnames';
 import type {DraggableSyntheticListeners} from '@dnd-kit/core';
 import type {Transform} from '@dnd-kit/utilities';
@@ -27,6 +27,7 @@ export interface Props {
   transition?: string | null;
   wrapperStyle?: React.CSSProperties;
   value: React.ReactNode;
+  data: any;
   onRemove?(): void;
   renderItem?(args: {
     dragOverlay: boolean;
@@ -64,11 +65,24 @@ export const Item = React.memo(
         transition,
         transform,
         value,
+        data,
         wrapperStyle,
         ...props
       },
       ref
     ) => {
+      const player = useMemo(() => {
+        for (const position in data) {
+          const players = data[position];
+          for (const p of players) {
+            if (p.id === value) {
+              return p;
+            }
+          }
+        }
+        return null;
+      }, [data, value]);
+    
       useEffect(() => {
         if (!dragOverlay) {
           return;
@@ -122,7 +136,7 @@ export const Item = React.memo(
                 ? `${transform.scaleY}`
                 : undefined,
               '--index': index,
-              '--color': color,
+              '--color': player.tierColor,
             } as React.CSSProperties
           }
           ref={ref}
@@ -134,7 +148,7 @@ export const Item = React.memo(
               handle && styles.withHandle,
               dragOverlay && styles.dragOverlay,
               disabled && styles.disabled,
-              color && styles.color
+              player.tierColor && styles.color,
             )}
             style={style}
             data-cypress="draggable-item"
@@ -145,16 +159,16 @@ export const Item = React.memo(
             {/* {value} */}
 
              <UserShortInfo
-                src="/pl3.png"
+                src={player?.image}
                 height={80}
                 width={80}
-                fName="Christian"
-                lName="George"
-                average={97.3}
-                rating={4.6}
-                title={'Senior Team Manager ' + value}
-                school="Kansas City School"
-                schoolIcon="/b.svg"
+                fName={player?.fname}
+                lName={player?.lname}
+                average={player?.avg}
+                rating={player?.rating}
+                title={player?.academy}
+                school={player?.school}
+                schoolIcon={player?.schoolIcon}
               />
 
             <span className={styles.Actions}>

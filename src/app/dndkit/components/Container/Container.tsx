@@ -64,7 +64,8 @@ export const Container = forwardRef<HTMLDivElement, Props>(
           hover && styles.hover,
           placeholder && styles.placeholder,
           scrollable && styles.scrollable,
-          shadow && styles.shadow
+          shadow && styles.shadow,
+          label
         )}
         onClick={onClick}
         tabIndex={onClick ? 0 : undefined}

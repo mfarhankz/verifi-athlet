@@ -372,8 +372,73 @@
   }
 }
 
-.colum-header {
+
+.WR {
+  .colum-header {
+    background: linear-gradient(81deg, #FFEEE5 0%, #FFF 100%);
+    .head-name {
+      span {
+        background-color: #FF7525;
+        &::after {
+          background-color: #FF7525;
+        }
+      }
+    }
+  }
+}
+.QB {
+  .colum-header {
     background: linear-gradient(81deg, #FAFFD6 0%, #FFF 100%);
+    .head-name {
+      span {
+        background-color: #CF0;
+        &::after {
+          background-color: #CF0;
+        }
+      }
+    }
+  }
+}
+.RB {
+  .colum-header {
+    background: linear-gradient(81deg, #E2F7FE 0%, #FFF 100%);
+    .head-name {
+      span {
+        background-color: #36C5F0;
+        &::after {
+          background-color: #36C5F0;
+        }
+      }
+    }
+  }
+}
+.TE {
+  .colum-header {
+    background: linear-gradient(81deg, #FFF9DC 0%, #FFF 100%);
+    .head-name {
+      span {
+        background-color: #FFD000;
+        &::after {
+          background-color: #FFD000;
+        }
+      }
+    }
+  }
+}
+.OGC {
+  .colum-header {
+    background: linear-gradient(81deg, #FEF0FF 0%, #FFF 100%);
+    .head-name {
+      span {
+        background-color: #F08EF7;
+        &::after {
+          background-color: #F08EF7;
+        }
+      }
+    }
+  }
+}
+.colum-header {
     gap: 8px;
     font-size: 16px;
     font-weight: 500;
@@ -387,7 +452,6 @@
         top: -39px;
         padding: 0;
         span {
-            background-color: #CF0;
             color: var(--primary);
             font-size: 24px;
             font-style: normal;
@@ -399,7 +463,6 @@
             z-index: 1;
             &::after {
                 content: '';
-                background-color: #CF0;
                 position: absolute;
                 top: 0;
                 left: 10px;
