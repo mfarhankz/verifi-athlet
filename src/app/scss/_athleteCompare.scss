@@ -47,10 +47,9 @@
     width: 100%;
     height: 60px;
     text-align: center;
-    h2 {
+    h3 {
       margin-bottom: 0px !important;
-      color: white;
-      font-size: 32px;
+      color: var(--text-white);
       font-weight: 700;
     }
     span {
@@ -63,7 +62,7 @@
     h5 {
       background-color: var(--success);
       color: white;
-      padding: 8px 12px;
+      padding: 4px 12px;
       margin-bottom: 0;
       font-size: 18px;
       line-height: normal;
@@ -77,10 +76,9 @@
     }
   }
   .achievements {
-    h2 {
+    h4 {
       padding: 0 20px;
       letter-spacing: -0.56px;
-      font-size: 26px;
     }
     i {
       color: var(--primary);
@@ -89,8 +87,8 @@
     }
     h5 {
       margin-bottom: 0;
-      font-size: 18px;
-      font-weight: 500;
+      font-size: 22px !important;
+    font-weight: 400 !important;
     }
     span {
       font-size: 18px;

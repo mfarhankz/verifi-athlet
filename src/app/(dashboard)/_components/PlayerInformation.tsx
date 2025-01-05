@@ -413,14 +413,14 @@ const gameLogColumns = [
 
 const Bio = () => (
   <div className="bio">
-    <h3>Contact Information</h3>
+    <h4>Contact Information</h4>
     <div className="grid grid-cols-2 p-5 gap-y-10">
       <div>
-        <span>Cell Phone</span>
+        <h6>Cell Phone</h6>
         <h5>(314) 412 2995</h5>
       </div>
       <div>
-        <span>OK to Connect</span>
+        <h6>OK to Connect</h6>
         <h5 className="flex">
           <Image
             className="mr-1"
@@ -433,25 +433,25 @@ const Bio = () => (
         </h5>
       </div>
       <div>
-        <span>Email Address</span>
+        <h6>Email Address</h6>
         <h5>
           <a href="#">mrsh543@gmail.com</a>
         </h5>
       </div>
       <div>
-        <span>Birthday</span>
+        <h6>Birthday</h6>
         <h5>9/17/1995 (29)</h5>
       </div>
       <div className="col-span-2">
-        <span>Preferred Contact Way</span>
+        <h6>Preferred Contact Way</h6>
         <h5>Text, Email</h5>
       </div>
       <div>
-        <span>Helping with Decesion</span>
+        <h6>Helping with Decesion</h6>
         <h5>Parent</h5>
       </div>
       <div>
-        <span>Contact Info</span>
+        <h6>Contact Info</h6>
         <h5 className="flex items-center mb-3">
           <span className="ms">MS</span>Matt Sarish (314) 304 2234
         </h5>
@@ -460,23 +460,23 @@ const Bio = () => (
         </h5>
       </div>
     </div>
-    <h3>Academy Details</h3>
+    <h4>Academy Details</h4>
     <div className="grid grid-cols-2 p-5 gap-y-8">
       <div>
-        <span>GPA</span>
+        <h6>GPA</h6>
         <h5>3.20</h5>
       </div>
       <div>
-        <span>Major</span>
+        <h6>Major</h6>
         <h5>Sports Management</h5>
       </div>
       <div>
-        <span>Importance</span>
+        <h6>Importance</h6>
         <h5>Sports Importance</h5>
       </div>
     </div>
 
-    <h3>College Roster Bio</h3>
+    <h4>College Roster Bio</h4>
     <div className="px-3">
       <p className="my-3">
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -495,21 +495,21 @@ const Bio = () => (
 const Stats = () => (
   <div>
     <div className="mb-10">
-      <h3>
+      <h4>
         Passing <span>89%</span>
-      </h3>
+      </h4>
       <Table dataSource={dataSource} columns={columns} pagination={false} className="with-footer" />
     </div>
     <div className="mb-10">
-      <h3>
+      <h4>
         Defense <span>49%</span>
-      </h3>
+      </h4>
       <Table dataSource={dataSource} columns={columns} pagination={false} className="with-footer" />
     </div>
     <div>
-      <h3>
+      <h4>
         Receiving <span>69%</span>
-      </h3>
+      </h4>
       <Table dataSource={dataSource} columns={columns} pagination={false} className="with-footer" />
     </div>
   </div>
@@ -517,7 +517,7 @@ const Stats = () => (
 const GameLog = () => (
   <div>
     <div className="mb-10">
-      <h3>Game Log</h3>
+      <h4>Game Log</h4>
       <div className="flex items-center my-3">
         <Image
           className="mr-1"
@@ -526,12 +526,12 @@ const GameLog = () => (
           width={29}
           height={40}
         />
-        <h4>NFL 2024 Fall Season</h4>
+        <h5>NFL 2024 Fall Season</h5>
       </div>
       <Table dataSource={gameLog} columns={gameLogColumns} pagination={false} />{" "}
     </div>
     <div>
-      <h3>Defence</h3>
+      <h4>Defence</h4>
       {/* <Table dataSource={gameLog} columns={gameLogColumns} pagination={false} /> */}
       <Table dataSource={gameLog} columns={gameLogColumns} pagination={false} />
     </div>
@@ -541,78 +541,78 @@ const GameLog = () => (
 const Survey = () => (
   <div>
     <div>
-    <h3>Why they are leaving?</h3>
+    <h4>Why they are leaving?</h4>
     <div className="flex items-center survey mb-5">
       <i className="icon-arrow-right text-2xl mr-2"></i>
       <div>
-        <span>In their own words</span>
-        <h6>My school fontbonne University is closing at the end of summer 2025 so I am looking to play my senior year 5th year</h6>
+        <h6>In their own words</h6>
+        <p>My school fontbonne University is closing at the end of summer 2025 so I am looking to play my senior year 5th year</p>
       </div>
     </div>
     <div className="flex items-center survey mb-5">
       <i className="icon-arrow-right mr-2"></i>
       <div>
-        <span>Desire a higher level</span>
-        <h6>Major Reason</h6>
+        <h6>Desire a higher level</h6>
+        <p>Major Reason</p>
       </div>
     </div>
     </div>
     <div>
-    <h3>What they are looking for?</h3>
+    <h4>What they are looking for?</h4>
     <div className="flex items-center survey mb-5">
       <i className="icon-arrow-right text-2xl mr-2"></i>
       <div>
-        <span>In their own words</span>
-        <h6>Strong academic program and student academic support student life</h6>
+        <h6>In their own words</h6>
+        <p>Strong academic program and student academic support student life</p>
       </div>
     </div>
     <div className="flex items-center survey mb-5">
       <i className="icon-arrow-right mr-2"></i>
       <div>
-        <span>Are you open to walking on at a top program?</span>
-        <h6>I would consider it for the right school</h6>
+        <h6>Are you open to walking on at a top program?</h6>
+        <p>I would consider it for the right school</p>
       </div>
     </div>
     <div className="flex items-center survey mb-5">
       <i className="icon-arrow-right mr-2"></i>
       <div>
-        <span>Preferred position</span>
-        <h6>CenterBack</h6>
+        <h6>Preferred position</h6>
+        <p>CenterBack</p>
       </div>
     </div>
     <div className="flex items-center survey mb-5">
       <i className="icon-arrow-right mr-2"></i>
       <div>
-        <span>Ideal division</span>
-        <h6>D1 High Major, D1 Mid Major, D1 Low Major, D2/NAIA, D3</h6>
+        <h6>Ideal division</h6>
+        <p>D1 High Major, D1 Mid Major, D1 Low Major, D2/NAIA, D3</p>
       </div>
     </div>
     <div className="flex items-center survey mb-5">
       <i className="icon-arrow-right mr-2"></i>
       <div>
-        <span>Full scholarship only</span>
-        <h6>No</h6>
+        <h6>Full scholarship only</h6>
+        <p>No</p>
       </div>
     </div>
     <div className="flex items-center survey mb-5">
       <i className="icon-arrow-right mr-2"></i>
       <div>
-        <span>Cost vs academic reputation</span>
-        <h6>Cost and academic reputation are equally important</h6>
+        <h6>Cost vs academic reputation</h6>
+        <p>Cost and academic reputation are equally important</p>
       </div>
     </div>
     <div className="flex items-center survey mb-5">
       <i className="icon-arrow-right mr-2"></i>
       <div>
-        <span>Winning vs location</span>
-        <h6>Winning tradition and location are equally important</h6>
+        <h6>Winning vs location</h6>
+        <p>Winning tradition and location are equally important</p>
       </div>
     </div>
     <div className="flex items-center survey mb-5">
       <i className="icon-arrow-right mr-2"></i>
       <div>
-        <span>Playing time vs championship</span>
-        <h6>Personal impact and the team competing for the national championship are equally important</h6>
+        <h6>Playing time vs championship</h6>
+        <p>Personal impact and the team competing for the national championship are equally important</p>
       </div>
     </div>
     </div>
@@ -620,7 +620,7 @@ const Survey = () => (
 );
 const Notes = () => (
   <Flex vertical>
-    <h3>Notes</h3>
+    <h4>Notes</h4>
     <CommentBox />
   </Flex>
 );

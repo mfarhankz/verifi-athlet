@@ -1,10 +1,8 @@
 .player-information {
     text-align: left;
 
-    h3 {
-        font-size: 22px;
+    h4 {
         font-style: italic;
-        font-weight: 600;
         padding: 9px;
         background: linear-gradient(90deg,
                 rgba(106, 255, 171, 0.1) 18.29%,
@@ -28,21 +26,17 @@
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
-        line-height: 30px;
+        line-height: 20px;
         /* 211.111% */
     }
 
-    span {
+    h6 {
         color: var(--primary);
-        font-size: 16px;
-        font-weight: 500;
         opacity: 0.5;
     }
 
     h5 {
         color: var(--primary);
-        font-size: 18px;
-        font-weight: 500;
         line-height: 16px;
 
         span {

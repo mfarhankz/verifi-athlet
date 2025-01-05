@@ -62,9 +62,9 @@ export default function MensSoccerPortal() {
             average={record.avg}
           />
           <div className="pro-detail">
-            <h6 className="flex">
+            <h4 className="flex">
               {record.fname + " " + record.lname} 
-              <span className="flex ml-3">
+              <small className="flex ml-2 items-center justify-center">
                 <Image
                   src={
                     record.rating < 2
@@ -79,8 +79,8 @@ export default function MensSoccerPortal() {
                   className="mr-1"
                 />
                 {record.rating.toFixed(1)}
-              </span>
-            </h6>
+              </small>
+            </h4>
             <div className="school">
               <Image
                 src={record.schoolIcon as string}
@@ -88,7 +88,7 @@ export default function MensSoccerPortal() {
                 width={20}
                 height={20}
               />
-              <span>{record.school}</span>
+              <p>{record.school}</p>
             </div>
             {record.academy && (
               <div className="academy">
@@ -98,7 +98,7 @@ export default function MensSoccerPortal() {
                   width={20}
                   height={20}
                 />
-                <span>{record.academy}</span>
+                <p>{record.academy}</p>
               </div>
             )}
           </div>
@@ -309,7 +309,7 @@ export default function MensSoccerPortal() {
             />
 
             <Flex justify="space-between" className="main-heading">
-              <Typography.Paragraph>Bryce Underwood</Typography.Paragraph>
+              <h2 className="uppercase">Bryce Underwood</h2>
               <Flex className="rating">
                 <Image
                   src="/success-star.svg"
@@ -322,7 +322,7 @@ export default function MensSoccerPortal() {
               </Flex>
             </Flex>
 
-            <Typography.Paragraph className="flex">
+            <h4 className="flex">
               <span>
                 <Image
                   src="/b.svg"
@@ -332,12 +332,12 @@ export default function MensSoccerPortal() {
                 />
               </span>
               Duke University
-            </Typography.Paragraph>
+            </h4>
 
-            <Typography.Paragraph>Belleville, ML</Typography.Paragraph>
+            <h4>Belleville, ML</h4>
 
             <Flex className="player-cost" justify="space-between">
-              <Typography.Paragraph className="cut-ui">
+              <h5 className="cut-ui">
                 <small className="flex">
                   <Image
                     src="/player-icon.svg"
@@ -350,7 +350,7 @@ export default function MensSoccerPortal() {
                 </small>
                 RANK LEVEL
                 <span>99.7</span>
-              </Typography.Paragraph>
+              </h5>
               <Typography.Paragraph className="price">
                 <small>NILL Value</small>
                 <span>$1.3M</span>
@@ -358,22 +358,22 @@ export default function MensSoccerPortal() {
             </Flex>
 
             <Flex className="list">
-              <Typography.Paragraph>
+              <h4>
                 <small>Pos</small>
                 QB
-              </Typography.Paragraph>
-              <Typography.Paragraph>
+              </h4>
+              <h4>
                 <small>Ht</small>
                 6.4”
-              </Typography.Paragraph>
-              <Typography.Paragraph>
+              </h4>
+              <h4>
                 <small>Wt</small>
                 215lb
-              </Typography.Paragraph>
-              <Typography.Paragraph>
+              </h4>
+              <h4>
                 <small>Commit Status</small>
                 LSU
-              </Typography.Paragraph>
+              </h4>
             </Flex>
           </Flex>
         )}

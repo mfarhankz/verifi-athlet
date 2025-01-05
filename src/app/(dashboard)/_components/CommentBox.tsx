@@ -30,7 +30,7 @@ export default function CommentBox() {
           </Flex>
           <Flex vertical className="w-full">
             <Flex justify="space-between">
-              <Typography.Title level={4}>Jason Masum</Typography.Title>
+              <h5>Jason Masum</h5>
               <Typography.Text className="edit-menu">
                 Edited 04/19/2024 4:59 PM
                 <Dropdown menu={{ items }} trigger={["click"]}>
@@ -54,7 +54,7 @@ export default function CommentBox() {
           </Flex>
           <Flex vertical className="w-full">
             <Flex justify="space-between">
-              <Typography.Title level={4}>Jason Masum</Typography.Title>
+              <h5>Jason Masum</h5>
               <Typography.Text className="edit-menu">
                 Edited 04/19/2024 4:59 PM
                 <Dropdown menu={{ items }} trigger={["click"]}>

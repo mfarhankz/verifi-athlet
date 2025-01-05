@@ -10,7 +10,7 @@ export default function PlayerProfile() {
   };
   return (
     <Layout className="my-profile">
-    <Typography.Title level={3}><i className="icon-user"></i> Profile Info</Typography.Title>
+    <Typography.Title level={4}><i className="icon-user"></i> Profile Info</Typography.Title>
     <Flex vertical>
       <Flex className="items-center justify-between mb-5">
         <Flex className="items-center">
@@ -22,7 +22,7 @@ export default function PlayerProfile() {
             width={110}
           />
           <Flex className="flex-col items-start">
-            <Typography.Title level={4}>Your Photo</Typography.Title>
+            <h6>Your Photo</h6>
             <Typography.Paragraph>
               Only jpg and png formats less than 2mb
             </Typography.Paragraph>
@@ -76,7 +76,7 @@ export default function PlayerProfile() {
           />
         </Flex>
         <div className="col-span-2 mt-2">
-          <Typography.Title level={3} className="mb-0"><i className="icon-lock-1"></i> Security</Typography.Title>
+          <Typography.Title level={4} className="mb-0"><i className="icon-lock-1"></i> Security</Typography.Title>
         </div>
         <div className="col-span-2">
           <Typography.Text>Current Password</Typography.Text>

@@ -174,10 +174,8 @@ h2.setting-heading {
     }
   }
 
-  h3.ant-typography {
-    font-size: 20px;
+  h4.ant-typography {
     font-style: italic;
-    font-weight: 600;
     padding: 9px;
     background: linear-gradient(
       90deg,
@@ -195,24 +193,24 @@ h2.setting-heading {
     }
   }
 
-  h4.ant-typography {
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 25px;
-    color: var(--primary);
-    margin: 0;
-    font-family: var(--antd-font-family);
-    display: flex;
-    i {
-      display: flex;
-      align-items: center;
-      margin-right: 5px;
-    }
-    span {
-      font-size: 16px;
-    }
-  }
+  // h4.ant-typography {
+  //   font-size: 18px;
+  //   font-style: normal;
+  //   font-weight: 500;
+  //   line-height: 25px;
+  //   color: var(--primary);
+  //   margin: 0;
+  //   font-family: var(--antd-font-family);
+  //   display: flex;
+  //   i {
+  //     display: flex;
+  //     align-items: center;
+  //     margin-right: 5px;
+  //   }
+  //   span {
+  //     font-size: 16px;
+  //   }
+  // }
 
   .border-img {
     padding: 5px;
@@ -338,8 +336,7 @@ h2.setting-heading {
   );
 }
 .custom-h3 {
-  font-weight: 600 !important;
-  font-size: 26px !important;
+
   margin-bottom: 0px !important;
 }
 .team-table {
@@ -368,7 +365,7 @@ h2.setting-heading {
   color: #126db8 !important;
 }
 .right-100 {
-  padding-right: 150px !important;
+  // padding-right: 150px !important;
 }
 .rating-type {
   width: 100%;

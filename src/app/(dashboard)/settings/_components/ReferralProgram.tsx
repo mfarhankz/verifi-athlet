@@ -66,24 +66,24 @@ export default function ReferralProgram() {
       <Typography.Title level={2}>How Referral System Works?</Typography.Title>
       <Flex className="mt-6 mb-5">
         <Flex vertical align="center">
-          <Typography.Title level={1}>1</Typography.Title>
-          <Typography.Title level={4}>Invite your friends</Typography.Title>
+          <Typography.Title level={2} style={{marginBottom:0}}>1</Typography.Title>
+          <Typography.Title level={5}>Invite your friends</Typography.Title>
           <Typography.Text className="text-center">
             just invite your friends by sending them invite email or share your
             invitation code
           </Typography.Text>
         </Flex>
         <Flex vertical align="center">
-          <Typography.Title level={1}>2</Typography.Title>
-          <Typography.Title level={4}>Get initial $50 reward</Typography.Title>
+          <Typography.Title level={2} style={{marginBottom:0}}>2</Typography.Title>
+          <Typography.Title level={5}>Get initial $50 reward</Typography.Title>
           <Typography.Text className="text-center">
             Once they accept your invite you will get instant award of $50 in
             your account
           </Typography.Text>
         </Flex>
         <Flex vertical align="center">
-          <Typography.Title level={1}>3</Typography.Title>
-          <Typography.Title level={4}>Get AD deal $500</Typography.Title>
+          <Typography.Title level={2} style={{marginBottom:0}}>3</Typography.Title>
+          <Typography.Title level={5}>Get AD deal $500</Typography.Title>
           <Typography.Text className="text-center">
             Secure bigger deals by getting AD deals and you will be awarded $500
           </Typography.Text>

@@ -58,9 +58,9 @@ export default function AthleteCompare() {
     <div className="main-container">
       <Flex vertical className="gap-3">
         <Flex className="card items-center justify-between">
-          <Typography.Title level={2} style={{ marginBottom: 0 }}>
+          <h4>
             Compare Athlete
-          </Typography.Title>
+          </h4>
 
           <Dropdown dropdownRender={dropdownContent} trigger={["click"]}>
             <Button className="select-dropdown">
@@ -84,7 +84,7 @@ export default function AthleteCompare() {
                 justify="center"
                 className="name uppercase mb-5 mt-3"
               >
-                <Typography.Title level={2} className="mr-3">
+                <Typography.Title level={3} className="mr-3">
                   Jason Shaun
                 </Typography.Title>
                 <Image
@@ -101,7 +101,7 @@ export default function AthleteCompare() {
                 <Typography.Text>ID: AX30902</Typography.Text>
               </Flex>
               <Flex vertical className="w-full achievements">
-                <Typography.Title level={2} className="italic">
+                <Typography.Title level={4} className="italic">
                   Profile & Achievements
                 </Typography.Title>
                 <Flex justify="space-between" align="center" className="gray">
@@ -192,7 +192,7 @@ export default function AthleteCompare() {
                 </ul>
               </div>
               <div className="progress">
-                <Typography.Title level={2} className="italic">
+                <Typography.Title level={4} className="italic">
                   Player Statistics
                 </Typography.Title>
                 <div className="flex items-center justify-between mt-2">
@@ -249,7 +249,7 @@ export default function AthleteCompare() {
                 />
               </div>
               <Flex vertical className="w-full achievements mb-3">
-                <Typography.Title level={2} className="italic">
+                <Typography.Title level={4} className="italic">
                   Other Info
                 </Typography.Title>
                 <Flex justify="space-between" align="center" className="gray">
@@ -276,7 +276,7 @@ export default function AthleteCompare() {
                 justify="center"
                 className="name uppercase mb-5 mt-3"
               >
-                <Typography.Title level={2} className="mr-3">
+                <Typography.Title level={3} className="mr-3">
                   Martin Jack
                 </Typography.Title>
                 <Image
@@ -293,7 +293,7 @@ export default function AthleteCompare() {
                 <Typography.Text>ID: AX30902</Typography.Text>
               </Flex>
               <Flex vertical className="w-full achievements">
-                <Typography.Title level={2} className="italic">
+                <Typography.Title level={4} className="italic">
                   Profile & Achievements
                 </Typography.Title>
                 <Flex justify="space-between" align="center" className="gray">
@@ -384,7 +384,7 @@ export default function AthleteCompare() {
                 </ul>
               </div>
               <div className="progress">
-                <Typography.Title level={2} className="italic">
+                <Typography.Title level={4} className="italic">
                   Player Statistics
                 </Typography.Title>
                 <div className="flex items-center justify-between mt-2">
@@ -441,7 +441,7 @@ export default function AthleteCompare() {
                 />
               </div>
               <Flex vertical className="w-full achievements mb-3">
-                <Typography.Title level={2} className="italic">
+                <Typography.Title level={4} className="italic">
                   Other Info
                 </Typography.Title>
                 <Flex justify="space-between" align="center" className="gray">
@@ -468,7 +468,7 @@ export default function AthleteCompare() {
                 justify="center"
                 className="name uppercase mb-5 mt-3"
               >
-                <Typography.Title level={2} className="mr-3">
+                <Typography.Title level={3} className="mr-3">
                   Alex Shaun
                 </Typography.Title>
                 <Image
@@ -485,7 +485,7 @@ export default function AthleteCompare() {
                 <Typography.Text>ID: AX30902</Typography.Text>
               </Flex>
               <Flex vertical className="w-full achievements">
-                <Typography.Title level={2} className="italic">
+                <Typography.Title level={4} className="italic">
                   Profile & Achievements
                 </Typography.Title>
                 <Flex justify="space-between" align="center" className="gray">
@@ -576,7 +576,7 @@ export default function AthleteCompare() {
                 </ul>
               </div>
               <div className="progress">
-                <Typography.Title level={2} className="italic">
+                <Typography.Title level={4} className="italic">
                   Player Statistics
                 </Typography.Title>
                 <div className="flex items-center justify-between mt-2">
@@ -633,7 +633,7 @@ export default function AthleteCompare() {
                 />
               </div>
               <Flex vertical className="w-full achievements mb-3">
-                <Typography.Title level={2} className="italic">
+                <Typography.Title level={4} className="italic">
                   Other Info
                 </Typography.Title>
                 <Flex justify="space-between" align="center" className="gray">

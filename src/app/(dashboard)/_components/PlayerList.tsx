@@ -1,16 +1,15 @@
-import { Typography } from "antd";
 import UserShortInfo from "./UserShortInfo";
 import { data } from '@/apis/data';
 
 export default function PlayerList() {
   return (
     <>
-      <Typography.Title level={2}>Similar Players</Typography.Title>
+      <h4 className="mb-3">Similar Players</h4>
       <div className="grid grid-cols-2">
         <div className="players-list">
-          <Typography.Title level={3}>New Joined Players</Typography.Title>
+          <h5>New Joined Players</h5>
           <ul>
-            {data.map((player) => (
+            {data.slice(0, 8).map((player) => (
               <li key={player.key}>
                 <UserShortInfo
                   src={player.image}
@@ -29,9 +28,9 @@ export default function PlayerList() {
           </ul>
         </div>
         <div className="players-list">
-          <Typography.Title level={3}>Popular Players</Typography.Title>
+          <h5>Popular Players</h5>
           <ul>
-            {data.map((player) => (
+            {data.slice(0, 8).map((player) => (
               <li key={player.key}>
                 <UserShortInfo
                   src={player.image}

@@ -44,10 +44,10 @@ export default function UserShortInfo({
         />
         <div className="ml-2 user-detail">
           <Flex gap={12}>
-            <Typography.Title level={4}>
-              <span>{fName}</span>
+            <h5>
+              <span>{fName} </span>
               {lName}
-            </Typography.Title>
+            </h5>
             <Flex align="center" justify="center">
               <Image
                 src={
@@ -62,14 +62,14 @@ export default function UserShortInfo({
                 width={20}
                 className="mr-1"
               />
-              <Typography.Title level={5}>{rating}</Typography.Title>
+              <h6>{rating}</h6>
             </Flex>
           </Flex>
-          <Typography.Paragraph>{title}</Typography.Paragraph>
-          <Typography.Paragraph>
-            <Image src={schoolIcon} alt="School Icon" width={15} height={18} />
+          <p>{title}</p>
+          <p className="flex items-center">
+            <Image src={schoolIcon} alt="School Icon" width={15} height={18} className="mr-1" />
             {school}
-          </Typography.Paragraph>
+          </p>
         </div>
       </Flex>
       {footer && 

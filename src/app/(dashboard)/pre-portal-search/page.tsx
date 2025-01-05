@@ -83,7 +83,7 @@ export default function PrePortalSearch() {
                     <span className="badge">
                       <i className="icon-check-2"></i>Active
                     </span>
-                    ID AX30902
+                    <span className="player-id">ID AX30902</span>
                   </Flex>
                   <Flex>
                     <Dropdown menu={{ items }} trigger={["click"]}>
@@ -93,7 +93,7 @@ export default function PrePortalSearch() {
                     </Dropdown>
                   </Flex>
                 </Flex>
-                <h3>
+                <h1>
                   Bryce Shaun
                   <span className="rating">
                     <Image
@@ -106,7 +106,7 @@ export default function PrePortalSearch() {
                     4.2
                     <Link href="/" className="icon-edit-2"></Link>
                   </span>
-                </h3>
+                </h1>
                 <div className="arrow-bg">
                   <h5 className="school">
                     <Image src="/b.svg" alt="abc" width={20} height={24} />
@@ -121,20 +121,20 @@ export default function PrePortalSearch() {
                   <div className="col-span-2">
                     <div className="grid grid-cols-2 gap-4 career-info mt-4">
                       <div>
-                        <span>Entered On Portal</span>
-                        <h6>03/06/2023</h6>
+                        <h6>Entered On Portal</h6>
+                        <h5>03/06/2023</h5>
                       </div>
                       <div>
-                        <span>Coming From</span>
-                        <h6>D1-Patriot League</h6>
+                        <h6>Coming From</h6>
+                        <h5>D1-Patriot League</h5>
                       </div>
                       <div>
-                        <span>Scholarship</span>
-                        <h6>Partial</h6>
+                        <h6>Scholarship</h6>
+                        <h5>Partial</h5>
                       </div>
                       <div>
-                        <span>Expected Grad Year</span>
-                        <h6 className="flex">
+                        <h6>Expected Grad Year</h6>
+                        <h5 className="flex">
                           <Image
                             className="mr-1"
                             src={"/tick.svg"}
@@ -143,11 +143,11 @@ export default function PrePortalSearch() {
                             height={20}
                           />
                           Yes - 08/20/2025
-                        </h6>
+                        </h5>
                       </div>
                       <div className="col-span-2">
-                        <span>Multiple Transfer From</span>
-                        <h6 className="flex mb-0">
+                        <h6>Multiple Transfer From</h6>
+                        <h5 className="flex mb-0">
                           <Image
                             className="mr-1"
                             src={"/tick.svg"}
@@ -156,7 +156,7 @@ export default function PrePortalSearch() {
                             height={20}
                           />
                           Yes - Massachusetts Institute of Technology
-                        </h6>
+                        </h5>
                       </div>
                     </div>
                   </div>
@@ -336,11 +336,6 @@ export default function PrePortalSearch() {
             <br />
             <Skeleton />
             <br />
-            <br />
-            <Skeleton />
-            <br />
-            <br />
-            <Skeleton />
           </div>
 
           <div className="col-span-12 card">

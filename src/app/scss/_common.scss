@@ -1,3 +1,51 @@
+
+h1{
+  font-size: 60px !important;
+  font-weight: 700 !important;
+  color: var(--primary);
+}
+
+h2{
+  font-size: 42px !important;
+  font-weight: 600 !important;
+  color: var(--primary);
+}
+
+h3{
+  font-size: 36px !important;
+  font-weight: 500 !important;
+  color: var(--primary);
+}
+
+h4{
+  font-size: 28px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.98px;
+  line-height: 28px;
+  color: var(--primary);
+  small {
+    font-size: 65%;
+  }
+}
+
+h5{
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  color: var(--primary);
+}
+
+h6{
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  color: var(--primary);
+}
+
+p {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  color: var(--primary);
+}
+
 .ant-typography {
   font-family: var(--antd-font-family) !important;
   font-size: 16px;
@@ -112,6 +160,13 @@
 .user-detail {
     text-align: left;
     min-width: 217px;
+    h5{
+      letter-spacing: -.4px;
+      max-width: 150px;
+      overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
     .ant-typography {
         margin: 0 !important;
         display: flex;

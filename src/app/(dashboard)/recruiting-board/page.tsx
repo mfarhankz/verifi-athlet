@@ -9,9 +9,9 @@ export default function RecruitingBoard() {
     <div className="main-container">
       <Flex className="card mb-4 items-center justify-between">
         <Flex>
-          <Typography.Title level={2} style={{ marginBottom: 0 }}>
+          <h4 style={{ marginBottom: 0 }}>
             Athlete Chart
-          </Typography.Title>
+          </h4>
         </Flex>
         <Flex>
           <Typography.Paragraph
@@ -39,7 +39,7 @@ export default function RecruitingBoard() {
           </Typography.Paragraph>
         </Flex>
       </Flex>
-      <div className="w-[100%] overflow-auto h-[calc(100vh-160px)]">
+      <div className="w-[100%] overflow-auto flex">
         <MultipleContainers data={data} handle={true} />
       </div>
     </div>

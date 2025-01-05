@@ -28,16 +28,16 @@ export default function SystemSettings() {
   };
   return (
     <Layout className="system-setting">
-      <Typography.Title level={3}>
+      <Typography.Title level={4}>
         <i className="icon-notification-bing"></i>Notification
       </Typography.Title>
       <Flex vertical>
         <Flex vertical>
           <Flex className="mb-5" align="center" justify="space-between">
-            <Typography.Title level={4}>
+            <h6 className="flex items-center">
               <i className="icon-sms flex text-xl mr-1"></i>
               Send me email notification when
-            </Typography.Title>
+            </h6>
             <Typography.Text>Jimmy.scape@ixo.com</Typography.Text>
           </Flex>
           <Flex
@@ -89,10 +89,10 @@ export default function SystemSettings() {
             <Switch defaultChecked onChange={onChange} />
           </Flex>
           <Flex className="mb-5 mt-5" align="center" justify="space-between">
-            <Typography.Title level={4}>
-              <i className="icon-keyboard-open"></i>
+            <h6 className="flex items-center">
+              <i className="icon-keyboard-open flex mr-1"></i>
               Desktop push notification
-            </Typography.Title>
+            </h6>
           </Flex>
           <ul>
             <li className="flex items-center border-b py-2 justify-between">
@@ -115,7 +115,7 @@ export default function SystemSettings() {
           </ul>
         </Flex>
 
-        <Typography.Title level={3}>
+        <Typography.Title level={4}>
           <i className="icon-star"></i>Theme Settings
         </Typography.Title>
 

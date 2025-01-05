@@ -118,9 +118,9 @@ export default function MyTeam() {
             </div>
           )}
           <Flex vertical>
-            <Typography.Title className="custom-h3">
+            <h4 className="custom-h3">
               <span>{record.firstName}</span> {record.lastName}
-            </Typography.Title>
+            </h4>
             <a className="text-lg">{record.email}</a>
           </Flex>
         </div>
@@ -191,9 +191,9 @@ export default function MyTeam() {
         <div className="flex items-center">
           <Flex vertical>
             <Typography.Paragraph>Coach</Typography.Paragraph>
-            <Typography className="mb-10">
+            <h4 className="mb-10">
               <span>{record.coachFirstName}</span> {record.coachLastName}
-            </Typography>
+            </h4>
 
             <Typography.Paragraph>Requested Date</Typography.Paragraph>
             <Typography.Text>{record.requestedDate}</Typography.Text>
@@ -261,7 +261,7 @@ export default function MyTeam() {
       <Flex className="grid grid-cols-2 gap-4">
         <Flex vertical className="card right-100">
           <Flex vertical>
-            <Typography.Title level={3}>
+            <Typography.Title level={4}>
               <i className="icon-user"></i>Team Information
             </Typography.Title>
             <Flex className="items-center justify-between mb-5">
@@ -305,7 +305,7 @@ export default function MyTeam() {
           </Flex>
           <Flex vertical>
             <Flex className="items-center justify-between mb-5">
-              <Typography.Title level={3}>
+              <Typography.Title level={4}>
                 <i className="icon-star"></i>Team Rating
               </Typography.Title>
               <Link className="underline text-lg" href="">
@@ -316,7 +316,7 @@ export default function MyTeam() {
               <Flex className="items-center justify-between">
                 <Flex vertical>
                   <Typography.Text>Too Good</Typography.Text>
-                  <Typography.Title level={4} className="m-0">
+                  <h6 className="m-0 flex items-center">
                     <Image
                       className="mr-1"
                       src={"/success-star.svg"}
@@ -325,7 +325,7 @@ export default function MyTeam() {
                       width={18}
                     />
                     Talent Pool Rating
-                  </Typography.Title>
+                  </h6>
                 </Flex>
                 <Flex className="gap-5">
                   <Link href="">
@@ -341,7 +341,7 @@ export default function MyTeam() {
               <Flex className="items-center justify-between">
                 <Flex vertical>
                   <Typography.Text>Great Get</Typography.Text>
-                  <Typography.Title level={4} className="m-0">
+                  <h6 className="m-0 flex items-center">
                     <Image
                       className="mr-1"
                       src={"/alert-star.svg"}
@@ -350,7 +350,7 @@ export default function MyTeam() {
                       width={18}
                     />
                     Talent Pool Rating
-                  </Typography.Title>
+                  </h6>
                 </Flex>
                 <Flex className="gap-5">
                   <Link href="">
@@ -366,7 +366,7 @@ export default function MyTeam() {
               <Flex className="items-center justify-between">
                 <Flex vertical>
                   <Typography.Text>Not Good Enough</Typography.Text>
-                  <Typography.Title level={4} className="m-0">
+                  <h6 className="m-0 flex items-center">
                     <Image
                       className="mr-1"
                       src={"/warning-star.svg"}
@@ -375,7 +375,7 @@ export default function MyTeam() {
                       width={18}
                     />
                     Talent Pool Rating
-                  </Typography.Title>
+                  </h6>
                 </Flex>
                 <Flex className="gap-5">
                   <Link href="">
@@ -391,7 +391,7 @@ export default function MyTeam() {
               <Flex className="items-center justify-between">
                 <Flex vertical>
                   <Typography.Text>Good Get</Typography.Text>
-                  <Typography.Title level={4} className="m-0">
+                  <h6 className="m-0 flex items-center">
                     <Image
                       className="mr-1"
                       src={"/danger-star.svg"}
@@ -400,7 +400,7 @@ export default function MyTeam() {
                       width={18}
                     />
                     Talent Pool Rating
-                  </Typography.Title>
+                  </h6>
                 </Flex>
                 <Flex className="gap-5">
                   <Link href="">
@@ -414,7 +414,7 @@ export default function MyTeam() {
             </Flex>
           </Flex>
           <Flex vertical>
-            <Typography.Title level={3}>
+            <Typography.Title level={4}>
               <i className="icon-star"></i>Edit Team Rating
             </Typography.Title>
             <Flex vertical>
@@ -483,7 +483,7 @@ export default function MyTeam() {
           </Flex>
         </Flex>
         <Flex vertical className="card">
-          <Typography.Title level={3}>
+          <Typography.Title level={4}>
             <i className="icon-user"></i>Coaches
           </Typography.Title>
           <div className="mb-4">
@@ -500,7 +500,7 @@ export default function MyTeam() {
         </Flex>
         <Flex vertical className="card col-span-2">
           <Flex>
-            <Typography.Title className="w-full" level={3}>
+            <Typography.Title className="w-full" level={4}>
               <i className="icon-user"></i>Coaches
             </Typography.Title>
             <Input className="w-80" placeholder="Search here..." />
