@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, {useEffect} from 'react';
 import classNames from 'classnames';
 import type {DraggableSyntheticListeners} from '@dnd-kit/core';
@@ -7,7 +10,6 @@ import {Handle, Remove} from './components';
 
 import styles from './Item.module.scss';
 import UserShortInfo from '@/app/(dashboard)/_components/UserShortInfo';
-import { json } from 'stream/consumers';
 
 export interface Props {
   dragOverlay?: boolean;
@@ -20,7 +22,7 @@ export interface Props {
   index?: number;
   fadeIn?: boolean;
   transform?: Transform | null;
-  listeners?: DraggableSyntheticListeners;
+  listeners?: any;
   sorting?: boolean;
   style?: React.CSSProperties;
   transition?: string | null;
@@ -44,7 +46,7 @@ export interface Props {
     index: number | undefined;
     fadeIn: boolean;
     listeners: DraggableSyntheticListeners;
-    ref: React.Ref<HTMLElement>;
+    ref: any;
     style: React.CSSProperties | undefined;
     transform: Props['transform'];
     transition: Props['transition'];

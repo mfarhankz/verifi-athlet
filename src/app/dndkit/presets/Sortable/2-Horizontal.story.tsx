@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react';
 import {MeasuringStrategy} from '@dnd-kit/core';
 import {

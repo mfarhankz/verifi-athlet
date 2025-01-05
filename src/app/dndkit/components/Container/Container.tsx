@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, {forwardRef} from 'react';
 import classNames from 'classnames';
 
@@ -21,7 +22,10 @@ export interface Props {
   onRemove?(): void;
 }
 
-export const Container = forwardRef<HTMLDivElement, Props>(
+export const Container = forwardRef<
+  HTMLDivElement | HTMLButtonElement,
+  Props
+>(
   (
     {
       children,
@@ -41,18 +45,20 @@ export const Container = forwardRef<HTMLDivElement, Props>(
     }: Props,
     ref
   ) => {
+    // Determine the element type
     const Component = onClick ? 'button' : 'div';
+
+    // Use a conditional cast for the ref
+    const castedRef = ref as React.Ref<HTMLButtonElement & HTMLDivElement>;
 
     return (
       <Component
         {...props}
-        ref={ref}
-        style={
-          {
-            ...style,
-            '--columns': columns,
-          } as React.CSSProperties
-        }
+        ref={castedRef}
+        style={{
+          ...style,
+          '--columns': columns,
+        } as React.CSSProperties}
         className={classNames(
           styles.Container,
           unstyled && styles.unstyled,
@@ -79,3 +85,6 @@ export const Container = forwardRef<HTMLDivElement, Props>(
     );
   }
 );
+
+// Add display name for debugging
+Container.displayName = 'Container';

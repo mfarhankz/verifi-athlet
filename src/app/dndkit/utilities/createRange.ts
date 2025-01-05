@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const defaultInitializer = (index: number) => index;
 
 export function createRange<T = number>(

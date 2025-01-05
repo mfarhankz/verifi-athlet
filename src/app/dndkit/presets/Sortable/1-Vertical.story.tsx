@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react';
 import {MeasuringStrategy, UniqueIdentifier} from '@dnd-kit/core';
 import {restrictToWindowEdges} from '@dnd-kit/modifiers';

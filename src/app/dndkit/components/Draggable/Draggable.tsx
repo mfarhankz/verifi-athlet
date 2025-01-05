@@ -10,7 +10,7 @@ import {
   draggableHorizontal,
   draggableVertical,
 } from './draggable-svg';
-import styles from './Draggable.module.css';
+import styles from './Draggable.module.scss';
 
 export enum Axis {
   All,

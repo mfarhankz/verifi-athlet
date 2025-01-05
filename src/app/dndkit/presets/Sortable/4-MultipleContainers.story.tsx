@@ -1,10 +1,11 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react';
 import type {CancelDrop, UniqueIdentifier} from '@dnd-kit/core';
 import {rectSortingStrategy} from '@dnd-kit/sortable';
 
-import {MultipleContainers, TRASH_ID} from './MultipleContainers';
-
 import {ConfirmModal} from '../../components';
+import MultipleContainers, { TRASH_ID } from './MultipleContainers';
 
 export default {
   title: 'Presets/Sortable/Multiple Containers',
@@ -28,7 +29,7 @@ export const Vertical = () => <MultipleContainers itemCount={5} vertical />;
 
 export const TrashableItems = ({confirmDrop}: {confirmDrop: boolean}) => {
   const [activeId, setActiveId] = React.useState<UniqueIdentifier | null>(null);
-  const resolveRef = React.useRef<(value: boolean) => void>();
+  const resolveRef = React.useRef<(value: boolean) => void | null>(null); // Initialize with null
 
   const cancelDrop: CancelDrop = async ({active, over}) => {
     if (over?.id !== TRASH_ID) {
