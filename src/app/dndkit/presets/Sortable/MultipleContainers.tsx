@@ -41,6 +41,7 @@ import { coordinateGetter as multipleContainersCoordinateGetter } from "./multip
 import { Item, Container, ContainerProps } from "../../components";
 
 import { createRange } from "../../utilities";
+import { DataType } from "@/apis/data";
 
 const animateLayoutChanges: AnimateLayoutChanges = (args) =>
   defaultAnimateLayoutChanges({ ...args, wasDragging: true });
@@ -133,6 +134,7 @@ interface Props {
   wrapperStyle?(args: { index: number }): React.CSSProperties;
   itemCount?: number;
   items?: Items;
+  data?: DataType[];
   handle?: boolean;
   renderItem?: any;
   strategy?: SortingStrategy;
@@ -153,7 +155,7 @@ function MultipleContainers({
   cancelDrop,
   columns,
   handle = false,
-  items: initialItems,
+  data: initialItems,
   containerStyle,
   coordinateGetter = multipleContainersCoordinateGetter,
   getItemStyles = () => ({}),
@@ -170,11 +172,14 @@ function MultipleContainers({
     if (Array.isArray(initialItems)) {
       return initialItems.reduce((acc, item) => {
         const containerKey = item.position;
+       if (containerKey) {
         if (!acc[containerKey]) {
           acc[containerKey] = [];
         }
         acc[containerKey].push(item.id);
         return acc;
+       }
+       return {}
       }, {} as Items);
     }
   
@@ -188,27 +193,26 @@ function MultipleContainers({
     );
   });
 
-  console.log('items', items);
-
-  const [customItems] = useState<Items>(() => {
+  const [customItems] = useState<any>(() => {
     if (Array.isArray(initialItems)) {
       return initialItems.reduce((acc, item) => {
         const containerKey = item.position;
+       if (containerKey) {
         if (!acc[containerKey]) {
           acc[containerKey] = [];
         }
         acc[containerKey].push(item);
         return acc;
-      }, {} as Items);
+       }
+       return {}
+      }, {} as any);
     }
   });
 
   const [containers, setContainers] = useState(
     Object.keys(items) as UniqueIdentifier[]
   );
-  console.log('customItems', customItems);
-  console.log('items', items);
-  console.log('containers', containers);
+
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null);
   const lastOverId = useRef<UniqueIdentifier | null>(null);
   const recentlyMovedToNewContainer = useRef(false);

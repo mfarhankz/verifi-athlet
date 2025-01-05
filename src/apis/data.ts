@@ -26,7 +26,7 @@ export interface DataType {
   direction: string;
   position?: string;
   tier?: number;
-  tierColor: string;
+  tierColor?: string;
 }
 export const data: DataType[] = [
   {

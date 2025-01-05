@@ -6,7 +6,7 @@ export default function RecruitingBoard() {
 
     return(
         <div className="main-container">
-            <MultipleContainers itemCount={5} items={data} />
+            <MultipleContainers data={data} />
         </div>
     );
 }

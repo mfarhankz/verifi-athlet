@@ -27,7 +27,7 @@ export interface Props {
   transition?: string | null;
   wrapperStyle?: React.CSSProperties;
   value: React.ReactNode;
-  data: any;
+  data?: any;
   onRemove?(): void;
   renderItem?(args: {
     dragOverlay: boolean;
@@ -136,7 +136,7 @@ export const Item = React.memo(
                 ? `${transform.scaleY}`
                 : undefined,
               '--index': index,
-              '--color': player.tierColor,
+              '--color': player?.tierColor,
             } as React.CSSProperties
           }
           ref={ref}
@@ -148,7 +148,7 @@ export const Item = React.memo(
               handle && styles.withHandle,
               dragOverlay && styles.dragOverlay,
               disabled && styles.disabled,
-              player.tierColor && styles.color,
+              player?.tierColor && styles.color,
             )}
             style={style}
             data-cypress="draggable-item"
