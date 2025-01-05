@@ -63,6 +63,7 @@ $focused-outline-color: #4c9ffe;
   box-sizing: border-box;
   list-style: none;
   transform-origin: 50% 50%;
+  cursor: pointer;
 
   -webkit-tap-highlight-color: transparent;
 
@@ -136,8 +137,7 @@ $focused-outline-color: #4c9ffe;
 .Actions {
   display: flex;
   align-self: flex-start;
-  margin-top: -12px;
-  margin-left: auto;
-  margin-bottom: -15px;
-  margin-right: -10px;
+  position: absolute;
+    top: 5px;
+    right: 5px;
 }

@@ -474,3 +474,12 @@
         }
       }
 }
+.ant-modal-content {
+  padding: 25px 15px 15px !important;
+  .ant-modal-body {
+    .main-container {
+      padding: 0 !important;
+      height: auto !important;
+    }
+  }
+}

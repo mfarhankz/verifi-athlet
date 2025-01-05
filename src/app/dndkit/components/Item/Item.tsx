@@ -1,14 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, {useEffect, useMemo} from 'react';
-import classNames from 'classnames';
-import type {DraggableSyntheticListeners} from '@dnd-kit/core';
-import type {Transform} from '@dnd-kit/utilities';
+import React, { useEffect, useMemo, useState } from "react";
+import classNames from "classnames";
+import type { DraggableSyntheticListeners } from "@dnd-kit/core";
+import type { Transform } from "@dnd-kit/utilities";
 
-import {Handle, Remove} from './components';
+import { Handle, Remove } from "./components";
 
-import styles from './Item.module.scss';
-import UserShortInfo from '@/app/(dashboard)/_components/UserShortInfo';
+import styles from "./Item.module.scss";
+import UserShortInfo from "@/app/(dashboard)/_components/UserShortInfo";
+import { Modal } from "antd";
+import PlayerEditModal from "@/app/(dashboard)/_components/PlayerEditModal";
 
 export interface Props {
   dragOverlay?: boolean;
@@ -38,9 +40,9 @@ export interface Props {
     listeners: DraggableSyntheticListeners;
     ref: React.Ref<HTMLElement>;
     style: React.CSSProperties | undefined;
-    transform: Props['transform'];
-    transition: Props['transition'];
-    value: Props['value'];
+    transform: Props["transform"];
+    transition: Props["transition"];
+    value: Props["value"];
   }): React.ReactElement;
 }
 
@@ -71,6 +73,19 @@ export const Item = React.memo(
       },
       ref
     ) => {
+      const [isModalOpen, setIsModalOpen] = useState(false);
+
+      const showModal = () => {
+        setIsModalOpen(true);
+      };
+
+      const handleOk = () => {
+        setIsModalOpen(false);
+      };
+
+      const handleCancel = () => {
+        setIsModalOpen(false);
+      };
       const player = useMemo(() => {
         for (const position in data) {
           const players = data[position];
@@ -82,16 +97,16 @@ export const Item = React.memo(
         }
         return null;
       }, [data, value]);
-    
+
       useEffect(() => {
         if (!dragOverlay) {
           return;
         }
 
-        document.body.style.cursor = 'grabbing';
+        document.body.style.cursor = "grabbing";
 
         return () => {
-          document.body.style.cursor = '';
+          document.body.style.cursor = "";
         };
       }, [dragOverlay]);
 
@@ -110,55 +125,57 @@ export const Item = React.memo(
           value,
         })
       ) : (
-        <li
-          className={classNames(
-            styles.Wrapper,
-            fadeIn && styles.fadeIn,
-            sorting && styles.sorting,
-            dragOverlay && styles.dragOverlay
-          )}
-          style={
-            {
-              ...wrapperStyle,
-              transition: [transition, wrapperStyle?.transition]
-                .filter(Boolean)
-                .join(', '),
-              '--translate-x': transform
-                ? `${Math.round(transform.x)}px`
-                : undefined,
-              '--translate-y': transform
-                ? `${Math.round(transform.y)}px`
-                : undefined,
-              '--scale-x': transform?.scaleX
-                ? `${transform.scaleX}`
-                : undefined,
-              '--scale-y': transform?.scaleY
-                ? `${transform.scaleY}`
-                : undefined,
-              '--index': index,
-              '--color': player?.tierColor,
-            } as React.CSSProperties
-          }
-          ref={ref}
-        >
-          <div
+        <>
+          <li
             className={classNames(
-              styles.Item,
-              dragging && styles.dragging,
-              handle && styles.withHandle,
-              dragOverlay && styles.dragOverlay,
-              disabled && styles.disabled,
-              player?.tierColor && styles.color,
+              styles.Wrapper,
+              fadeIn && styles.fadeIn,
+              sorting && styles.sorting,
+              dragOverlay && styles.dragOverlay
             )}
-            style={style}
-            data-cypress="draggable-item"
-            {...(!handle ? listeners : undefined)}
-            {...props}
-            tabIndex={!handle ? 0 : undefined}
+            style={
+              {
+                ...wrapperStyle,
+                transition: [transition, wrapperStyle?.transition]
+                  .filter(Boolean)
+                  .join(", "),
+                "--translate-x": transform
+                  ? `${Math.round(transform.x)}px`
+                  : undefined,
+                "--translate-y": transform
+                  ? `${Math.round(transform.y)}px`
+                  : undefined,
+                "--scale-x": transform?.scaleX
+                  ? `${transform.scaleX}`
+                  : undefined,
+                "--scale-y": transform?.scaleY
+                  ? `${transform.scaleY}`
+                  : undefined,
+                "--index": index,
+                "--color": player?.tierColor,
+              } as React.CSSProperties
+            }
+            ref={ref}
+            onClick={showModal}
           >
-            {/* {value} */}
+            <div
+              className={classNames(
+                styles.Item,
+                dragging && styles.dragging,
+                handle && styles.withHandle,
+                dragOverlay && styles.dragOverlay,
+                disabled && styles.disabled,
+                player?.tierColor && styles.color
+              )}
+              style={style}
+              data-cypress="draggable-item"
+              {...(!handle ? listeners : undefined)}
+              {...props}
+              tabIndex={!handle ? 0 : undefined}
+            >
+              {/* {value} */}
 
-             <UserShortInfo
+              <UserShortInfo
                 src={player?.image}
                 height={80}
                 width={80}
@@ -169,16 +186,29 @@ export const Item = React.memo(
                 title={player?.academy}
                 school={player?.school}
                 schoolIcon={player?.schoolIcon}
+                footer={true}
               />
 
-            <span className={styles.Actions}>
-              {onRemove ? (
-                <Remove className={styles.Remove} onClick={onRemove} />
-              ) : null}
-              {handle ? <Handle {...handleProps} {...listeners} /> : null}
-            </span>
-          </div>
-        </li>
+              <span className={styles.Actions}>
+                {onRemove ? (
+                  <Remove className={styles.Remove} onClick={onRemove} />
+                ) : null}
+                {handle ? <Handle {...handleProps} {...listeners} /> : null}
+              </span>
+            </div>
+          </li>
+
+          <Modal
+            footer={false}
+            open={isModalOpen}
+            onOk={handleOk}
+            onCancel={handleCancel}
+            width={950}
+            style={{ top: 10 }}
+          >
+            <PlayerEditModal />
+          </Modal>
+        </>
       );
     }
   )

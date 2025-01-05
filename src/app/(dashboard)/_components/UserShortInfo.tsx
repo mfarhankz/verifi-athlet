@@ -15,6 +15,7 @@ interface UserShortInfoProps {
   rating: number;
   school: string;
   schoolIcon: string;
+  footer?: boolean;
 }
 
 export default function UserShortInfo({
@@ -28,6 +29,7 @@ export default function UserShortInfo({
   title,
   school,
   schoolIcon,
+  footer
 }: UserShortInfoProps) {
   return (
     <Flex vertical className="player-short-info">
@@ -70,10 +72,12 @@ export default function UserShortInfo({
           </Typography.Paragraph>
         </div>
       </Flex>
+      {footer && 
       <Flex className="justify-between pr-2 pl-1 w-[97%]">
         <Typography.Text>6'.2", 225 lbs</Typography.Text>
-        <Typography.Text><span className="user-icon">JA</span> James Alex</Typography.Text>
+        <Typography.Text className="items-center"><span className="user-icon">JA</span> James Alex</Typography.Text>
       </Flex>
+}
     </Flex>
   );
 }
