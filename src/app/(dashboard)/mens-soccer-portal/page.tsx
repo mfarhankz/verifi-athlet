@@ -255,12 +255,10 @@ export default function MensSoccerPortal() {
 
         <Space>
           <div className="selectbox-ui">
-            <i className="icon-filter-1"></i>
-            <TableView />
+            <Filters />
           </div>
           <div className="selectbox-ui">
-            <i className="icon-setting-4"></i>
-            <Filters />
+            <TableView />
           </div>
         </Space>
       </Flex>

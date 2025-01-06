@@ -22,7 +22,7 @@ export default function TableView() {
     <Flex>
       <Dropdown dropdownRender={dropdownContent} trigger={["click"]}>
             <Button className="select-dropdown">
-              Table View <i className="icon-arrow-down-1"></i>
+              <i className="icon-setting-4"></i> Table View <i className="icon-arrow-down-1"></i>
             </Button>
           </Dropdown>
     </Flex>
