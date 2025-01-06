@@ -19,6 +19,8 @@ import Image from "next/image";
 import Link from "next/link";
 import ImageWithAverage from "../_components/ImageWithAverage";
 import { DataType, data } from '@/apis/data';
+import TableView from "../_components/TableView";
+import Filters from "../_components/Filters";
 
 
 const boxStyle: React.CSSProperties = {
@@ -254,32 +256,11 @@ export default function MensSoccerPortal() {
         <Space>
           <div className="selectbox-ui">
             <i className="icon-filter-1"></i>
-            <Select
-              suffixIcon={<i className="icon-arrow-down-1"></i>}
-              defaultValue="Filters"
-              style={{ width: 134 }}
-              onChange={handleChange}
-              options={[
-                { value: "filters", label: "Filters" },
-                { value: "jack", label: "Type" },
-                { value: "lucy", label: "Age" },
-                { value: "Yiminghe", label: "Height" },
-              ]}
-            />
+            <TableView />
           </div>
           <div className="selectbox-ui">
             <i className="icon-setting-4"></i>
-            <Select
-              suffixIcon={<i className="icon-arrow-down-1"></i>}
-              defaultValue="Table View"
-              style={{ width: 134 }}
-              onChange={handleChange}
-              options={[
-                { value: "jack", label: "Table View" },
-                { value: "lucy", label: "Gride View" },
-                { value: "Yiminghe", label: "Celander View" },
-              ]}
-            />
+            <Filters />
           </div>
         </Space>
       </Flex>
