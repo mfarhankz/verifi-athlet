@@ -155,7 +155,7 @@ function MultipleContainers({
   cancelDrop,
   columns,
   handle = false,
-  data: initialItems,
+  data,
   containerStyle,
   coordinateGetter = multipleContainersCoordinateGetter,
   getItemStyles = () => ({}),
@@ -169,8 +169,8 @@ function MultipleContainers({
   scrollable,
 }: Props) {
   const [items, setItems] = useState<Items>(() => {
-    if (Array.isArray(initialItems)) {
-      return initialItems.reduce((acc, item) => {
+    if (Array.isArray(data)) {
+      return data.reduce((acc, item) => {
         const containerKey = item.position;
        if (containerKey) {
         if (!acc[containerKey]) {
@@ -184,29 +184,13 @@ function MultipleContainers({
     }
   
     return (
-      initialItems ?? {
+      data ?? {
         A: createRange(itemCount, (index) => `A${index + 1}`),
         B: createRange(itemCount, (index) => `B${index + 1}`),
         C: createRange(itemCount, (index) => `C${index + 1}`),
         D: createRange(itemCount, (index) => `D${index + 1}`),
       }
     );
-  });
-
-  const [customItems] = useState<any>(() => {
-    if (Array.isArray(initialItems)) {
-      return initialItems.reduce((acc, item) => {
-        const containerKey = item.position;
-       if (containerKey) {
-        if (!acc[containerKey]) {
-          acc[containerKey] = [];
-        }
-        acc[containerKey].push(item);
-        return acc;
-       }
-       return {}
-      }, {} as any);
-    }
   });
 
   const [containers, setContainers] = useState(
@@ -515,7 +499,7 @@ function MultipleContainers({
                     <SortableItem
                       disabled={isSortingContainer}
                       key={value}
-                      data={customItems}
+                      data={data}
                       id={value}
                       index={index}
                       handle={handle}
@@ -565,7 +549,7 @@ function MultipleContainers({
       <Item
         value={id}
         handle={handle}
-        data={customItems}
+        data={data}
         style={getItemStyles({
           containerId: findContainer(id) as UniqueIdentifier,
           overIndex: -1,
@@ -598,7 +582,7 @@ function MultipleContainers({
           <Item
             key={item}
             value={item}
-            data={customItems}
+            data={data}
             handle={handle}
             style={getItemStyles({
               containerId,

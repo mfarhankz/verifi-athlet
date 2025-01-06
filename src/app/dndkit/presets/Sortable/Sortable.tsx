@@ -225,6 +225,7 @@ export function Sortable({
               <SortableItem
                 key={value}
                 id={value}
+                componentType="tableView"
                 handle={handle}
                 index={index}
                 style={getItemStyles}
@@ -251,6 +252,7 @@ export function Sortable({
                   value={items[activeIndex]}
                   handle={handle}
                   renderItem={renderItem}
+                  componentType="tableView"
                   wrapperStyle={wrapperStyle({
                     active: {id: activeId},
                     index: activeIndex,
@@ -282,6 +284,7 @@ interface SortableItemProps {
   getNewIndex?: NewIndexGetter;
   id: UniqueIdentifier;
   index: number;
+  componentType?: string;
   handle: boolean;
   useDragOverlay?: boolean;
   onRemove?(id: UniqueIdentifier): void;
@@ -297,6 +300,7 @@ export function SortableItem({
   handle,
   id,
   index,
+  componentType,
   onRemove,
   style,
   renderItem,
@@ -327,6 +331,7 @@ export function SortableItem({
       value={id}
       disabled={disabled}
       dragging={isDragging}
+      componentType={componentType}
       sorting={isSorting}
       handle={handle}
       handleProps={
