@@ -289,6 +289,10 @@ h2.setting-heading {
     font-style: normal;
     font-weight: 500;
   }
+  &:hover {
+    background-color: var(--bg-primary) !important;
+    opacity: 0.8;
+  }
 }
 .ant-btn-color-dangerous {
   display: flex;

@@ -1,14 +1,10 @@
 import React from "react";
-import { Button, Dropdown, Flex, Input, Radio, Typography } from "antd";
+import { Button, Dropdown, Flex, Input, Radio } from "antd";
 import type { CollapseProps, RadioChangeEvent } from "antd";
 import { Collapse } from "antd";
 
 export default function Filters() {
-  const text = `
-    A dog is a type of domesticated animal.
-    Known for its loyalty and faithfulness,
-    it can be found as a welcome guest in many households across the world.
-  `;
+
   const onChange = (e: RadioChangeEvent) => {
     console.log(`radio checked:${e.target.value}`);
   };
@@ -137,15 +133,15 @@ export default function Filters() {
     <Flex vertical className="filter-screen p-4">
       <Flex justify="space-between">
         <h4>Saved</h4>
-        <i className="icon-arrow-down-1"></i>
+        <i className="icon-xmark-regular"></i>
       </Flex>
       <Flex className="session">
         <p>My-Search-Session 2025</p>
-        <i className="icon-arrow-down-1"></i>
+        <i className="icon-xmark-regular red"></i>
       </Flex>
       <Flex className="session mb-3">
         <p>Filters 10/20/2024</p>
-        <i className="icon-arrow-down-1"></i>
+        <i className="icon-xmark-regular red"></i>
       </Flex>
       <h4>All Filters</h4>
       <Collapse
@@ -154,15 +150,15 @@ export default function Filters() {
         items={items}
         expandIcon={({ isActive }) =>
           isActive ? (
-            <i className="icon-filter-1"></i>
+            <i className="icon-minus"></i>
           ) : (
-            <i className="icon-arrow-down-1"></i>
+            <i className="icon-add"></i>
           )
         }
         expandIconPosition="end"
       />
-      <Flex vertical className="filter-input">
-          <h6 className="mb-1">Save or create an alert</h6>
+      <Flex vertical className="filter-input mt-4">
+          <p className="mb-1">Save or create an alert</p>
           <Input type="text" />
       </Flex>
       <Flex className="flex justify-center gap-2">
