@@ -1,33 +1,49 @@
 export interface DataType {
   key: string;
   id: string;
-  fname: string;
-  lname: string;
-  image: string;
-  imageLarge: string;
-  unread: number;
-  rating: number;
-  avg: number;
-  school: string;
-  schoolIcon: string;
-  academy: string;
-  academyIcon: string;
-  date: string;
-  evaluation: string;
-  div: string;
-  yr: string;
-  $: string;
-  ht: string;
-  high_school: string;
-  st: string;
-  wt: string;
-  s: string;
-  h: string;
-  direction: string;
+  fname?: string;
+  lname?: string;
+  image?: string;
+  imageLarge?: string;
+  unread?: number;
+  rating?: number;
+  avg?: number;
+  school?: string;
+  schoolIcon?: string;
+  academy?: string;
+  academyIcon?: string;
+  date?: string;
+  evaluation?: string;
+  div?: string;
+  yr?: string;
+  $?: string;
+  ht?: string;
+  high_school?: string;
+  st?: string;
+  wt?: string;
+  s?: string;
+  h?: string;
+  direction?: string;
   position?: string;
   tier?: number;
   tierColor?: string;
 }
+
+export const columns = [
+  'evaluation',
+    'div',
+    'yr',
+    '$',
+    'wt',
+    'ht',
+    'high_school',
+    'st',
+    'snaps',
+    's',
+    'h',
+    'direction',
+];
+
 export const data: DataType[] = [
   {
     key: "1",

@@ -9,7 +9,7 @@ import { Handle, Remove } from "./components";
 
 import styles from "./Item.module.scss";
 import UserShortInfo from "@/app/(dashboard)/_components/UserShortInfo";
-import { Modal } from "antd";
+import { Input, Modal } from "antd";
 import PlayerEditModal from "@/app/(dashboard)/_components/PlayerEditModal";
 
 export interface Props {
@@ -30,6 +30,7 @@ export interface Props {
   wrapperStyle?: React.CSSProperties;
   value: React.ReactNode;
   data?: any;
+  componentType?: string;
   onRemove?(): void;
   renderItem?(args: {
     dragOverlay: boolean;
@@ -59,6 +60,7 @@ export const Item = React.memo(
         handleProps,
         height,
         index,
+        componentType,
         listeners,
         onRemove,
         renderItem,
@@ -86,17 +88,11 @@ export const Item = React.memo(
       const handleCancel = () => {
         setIsModalOpen(false);
       };
-      const player = useMemo(() => {
-        for (const position in data) {
-          const players = data[position];
-          for (const p of players) {
-            if (p.id === value) {
-              return p;
-            }
-          }
-        }
-        return null;
-      }, [data, value]);
+
+      const player = useMemo(
+        () => (data || []).find((p: any) => p.id === value),
+        [data, value]
+      );
 
       useEffect(() => {
         if (!dragOverlay) {
@@ -156,7 +152,7 @@ export const Item = React.memo(
               } as React.CSSProperties
             }
             ref={ref}
-            onClick={showModal}
+            onClick={componentType !== "tableView" ? showModal : () => {}}
           >
             <div
               className={classNames(
@@ -173,21 +169,25 @@ export const Item = React.memo(
               {...props}
               tabIndex={!handle ? 0 : undefined}
             >
-              {/* {value} */}
+              
 
-              <UserShortInfo
-                src={player?.image}
-                height={80}
-                width={80}
-                fName={player?.fname}
-                lName={player?.lname}
-                average={player?.avg}
-                rating={player?.rating}
-                title={player?.academy}
-                school={player?.school}
-                schoolIcon={player?.schoolIcon}
-                footer={true}
-              />
+              {componentType !== "tableView" ? (
+                <UserShortInfo
+                  src={player?.image}
+                  height={80}
+                  width={80}
+                  fName={player?.fname}
+                  lName={player?.lname}
+                  average={player?.avg}
+                  rating={player?.rating}
+                  title={player?.academy}
+                  school={player?.school}
+                  schoolIcon={player?.schoolIcon}
+                  footer={true}
+                />
+              ) : (
+                <div><Input type="text" placeholder="Column name" value={value?.toString()} /> {}</div>
+              )}
 
               <span className={styles.Actions}>
                 {onRemove ? (

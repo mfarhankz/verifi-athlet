@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Dropdown, Flex, Input } from "antd";
 import { Sortable } from "@/app/dndkit/presets/Sortable/Sortable";
+import { columns } from "@/apis/data";
 
 export default function TableView() {
   const dropdownContent = () => (
@@ -16,10 +17,10 @@ export default function TableView() {
 
       <ul>
         <li>
-          <Input type="text" placeholder="Column name" />
           <Sortable
             removable
             handle
+            items={columns}
           />
         </li>
       </ul>

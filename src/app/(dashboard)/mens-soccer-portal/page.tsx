@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import {
   Flex,
   Table,
-  Select,
   Typography,
   Space,
   Modal,
@@ -227,9 +226,9 @@ export default function MensSoccerPortal() {
     }),
   };
 
-  const handleChange = (value: string) => {
-    console.log(`selected ${value}`);
-  };
+  // const handleChange = (value: string) => {
+  //   console.log(`selected ${value}`);
+  // };
 
   const handleCancel = () => {
     setIsProfileVisible(false);
