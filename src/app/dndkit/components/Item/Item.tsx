@@ -11,6 +11,7 @@ import styles from "./Item.module.scss";
 import UserShortInfo from "@/app/(dashboard)/_components/UserShortInfo";
 import { Input, Modal } from "antd";
 import PlayerEditModal from "@/app/(dashboard)/_components/PlayerEditModal";
+import { i } from "framer-motion/client";
 
 export interface Props {
   dragOverlay?: boolean;
@@ -186,7 +187,10 @@ export const Item = React.memo(
                   footer={true}
                 />
               ) : (
-                <div><Input type="text" placeholder="Column name" value={value?.toString()} /> {}</div>
+                <>
+                <i className="icon-add flex plus-filed"></i>
+                <Input type="text" placeholder="Column name" value={value?.toString()} />
+                </>
               )}
 
               <span className={styles.Actions}>

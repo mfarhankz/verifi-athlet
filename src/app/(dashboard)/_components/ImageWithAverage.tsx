@@ -3,23 +3,23 @@ import { Flex } from "antd";
 import Image from "next/image";
 
 interface ImageWithAverageProps {
-  src: string;
-  alt: string;
+  src?: string;
+  alt?: string;
   size?: string;
-  height: number;
-  width: number;
+  height?: number;
+  width?: number;
   containerWidth?: string;
-  average: number;
+  average?: number;
 }
 
 export default function ImageWithAverage({
-  src,
-  alt,
-  size = "",
+  src="",
+  alt="",
+  size,
   height,
   width,
   containerWidth,
-  average,
+  average=0,
 }: ImageWithAverageProps) {
   const getClassByAvg = (avg: number) => {
     if (avg < 30) return "error";

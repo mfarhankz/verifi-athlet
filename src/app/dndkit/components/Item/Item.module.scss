@@ -55,7 +55,7 @@ $focused-outline-color: #4c9ffe;
   display: flex;
   flex-grow: 1;
   align-items: center;
-  padding: 6px 0 2px 8px;
+  padding: 4px 0 4px 8px;
   background-color: $background-color;
   // box-shadow: $box-shadow;
   outline: none;
@@ -137,7 +137,5 @@ $focused-outline-color: #4c9ffe;
 .Actions {
   display: flex;
   align-self: flex-start;
-  position: absolute;
-    top: 5px;
-    right: 5px;
+  margin: auto;
 }

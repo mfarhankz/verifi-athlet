@@ -163,19 +163,19 @@
   height: 40px;
   display: flex;
 
-  i {
-    position: absolute;
-    z-index: 9;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    display: flex;
-    align-items: center;
-    left: 10px;
-    &::before {
-      font-weight: bolder !important;
-    }
-  }
+  // i {
+  //   position: absolute;
+  //   z-index: 9;
+  //   top: 0;
+  //   bottom: 0;
+  //   margin: auto 0;
+  //   display: flex;
+  //   align-items: center;
+  //   left: 10px;
+  //   &::before {
+  //     font-weight: bolder !important;
+  //   }
+  // }
   .ant-select-single {
     height: 40px;
   }

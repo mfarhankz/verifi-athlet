@@ -5,16 +5,16 @@ import Image from "next/image";
 import ImageWithAverage from "./ImageWithAverage";
 
 interface UserShortInfoProps {
-  src: string;
-  height: number;
-  width: number;
-  fName: string;
-  lName: string;
-  title: string;
-  average: number;
-  rating: number;
-  school: string;
-  schoolIcon: string;
+  src?: string;
+  height?: number;
+  width?: number;
+  fName?: string;
+  lName?: string;
+  title?: string;
+  average?: number;
+  rating?: number;
+  school?: string;
+  schoolIcon?: string;
   footer?: boolean;
 }
 
@@ -24,11 +24,11 @@ export default function UserShortInfo({
   lName,
   height,
   width,
-  average,
-  rating,
+  average=0,
+  rating=0,
   title,
   school,
-  schoolIcon,
+  schoolIcon="",
   footer
 }: UserShortInfoProps) {
   return (

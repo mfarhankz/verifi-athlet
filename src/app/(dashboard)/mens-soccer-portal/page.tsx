@@ -254,6 +254,9 @@ export default function MensSoccerPortal() {
 
         <Space>
           <div className="selectbox-ui">
+            <div className="filter-badge"><span>Type: Active</span> <i className="icon-xmark-regular"></i></div>
+            <div className="filter-badge"><span>Age: 25 - 35</span> <i className="icon-xmark-regular"></i></div>
+
             <Filters />
           </div>
           <div className="selectbox-ui">

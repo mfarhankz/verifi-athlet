@@ -2,8 +2,9 @@ $focused-outline-color: #4c9ffe;
 
 .Action {
   display: flex;
-  width: 12px;
-  padding: 8px 14px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
@@ -32,6 +33,7 @@ $focused-outline-color: #4c9ffe;
     height: 100%;
     overflow: visible;
     fill: #919eab;
+    width: 70%;
   }
 
   &:active {
