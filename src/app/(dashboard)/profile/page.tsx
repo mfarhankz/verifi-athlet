@@ -1,6 +1,14 @@
 "use client";
 
-import { Button, Flex, Select, Switch, Typography } from "antd";
+import {
+  Button,
+  Dropdown,
+  Flex,
+  MenuProps,
+  Select,
+  Switch,
+  Typography,
+} from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import ImageWithAverage from "../_components/ImageWithAverage";
@@ -13,6 +21,21 @@ export default function Profile() {
   const onChange = (checked: boolean) => {
     console.log(`switch to ${checked}`);
   };
+  const items: MenuProps["items"] = [
+    {
+      label: <a href="#">Upload new photo</a>,
+      key: "0",
+      icon: <i className="icon-camera"></i>,
+    },
+    {
+      type: "divider",
+    },
+    {
+      label: <a href="#">Remove photo</a>,
+      key: "1",
+      icon: <i className="icon-camera-slash"></i>,
+    },
+  ];
 
   return (
     <div className="main-container">
@@ -20,14 +43,27 @@ export default function Profile() {
         <div className="grid grid-cols-12 w-full mb-5 gap-4">
           <div className="col-span-4">
             <Flex vertical className="user-container">
-              <ImageWithAverage
-                src="/profile-img.png"
-                alt="Survey Image"
-                height={250}
-                width={250}
-                containerWidth="100%"
-                average={85.7}
-              />
+              <div>
+                <ImageWithAverage
+                  src="/profile-img.png"
+                  alt="Survey Image"
+                  height={250}
+                  width={250}
+                  containerWidth="100%"
+                  average={85.7}
+                />
+                <Flex className="camera">
+                  <Dropdown
+                    className="absolute right-0 top-52"
+                    menu={{ items }}
+                    trigger={["click"]}
+                  >
+                    <Button className="select-dropdown">
+                      <i className="icon-camera"></i>
+                    </Button>
+                  </Dropdown>
+                </Flex>
+              </div>
               <Flex className="w-[100%]">
                 <ul>
                   <li>

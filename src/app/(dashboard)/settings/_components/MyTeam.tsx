@@ -2,6 +2,7 @@
 
 import {
   Button,
+  Checkbox,
   Flex,
   Input,
   Layout,
@@ -10,10 +11,11 @@ import {
   Table,
   Typography,
 } from "antd";
-import type { RadioChangeEvent, TableColumnsType } from "antd";
+import type {RadioChangeEvent, TableColumnsType } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import Image from "next/image";
 import Link from "next/link";
+import CoachInvite from "../../_components/CoachInvite";
 // Team Alerts
 interface TeamAlert {
   key: React.Key;
@@ -106,9 +108,10 @@ export default function MyTeam() {
       title: "Player Name",
       dataIndex: "name",
       render: (_: unknown, record: DataType) => (
-        <div className="flex items-center">
+        <div className="coaches flex items-center">
           {record.firstName && (
-            <div className="flex justify-center items-center mr-3">
+            <div className="flex justify-center items-center mr-3 gap-2">
+              <Checkbox onChange={onChange} />
               <Image
                 src={record.img}
                 alt={record.firstName}
@@ -486,10 +489,15 @@ export default function MyTeam() {
           <Typography.Title level={4}>
             <i className="icon-user"></i>Coaches
           </Typography.Title>
+          <Flex justify="space-between">
           <div className="mb-4">
             <Input className="w-56" placeholder="Search..." />
             <i className="icon-search-normal-1 relative right-[34px] top-[6px] text-2xl"></i>
           </div>
+          <Flex>
+            <CoachInvite />
+          </Flex>
+          </Flex>
           <div>
             <Table<DataType>
               columns={columns}
