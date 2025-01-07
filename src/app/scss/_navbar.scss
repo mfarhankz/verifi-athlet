@@ -40,6 +40,9 @@ header {
         color: var(--primary);
         margin-right: 7px;
         margin-left: 25px;
+        height: 42px;
+        display: flex;
+        align-items: center;
         .ant-avatar {
             margin-right: 5px;
         }

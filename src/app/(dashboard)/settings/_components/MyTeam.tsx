@@ -2,7 +2,6 @@
 
 import {
   Button,
-  Checkbox,
   Flex,
   Input,
   Layout,
@@ -11,11 +10,12 @@ import {
   Table,
   Typography,
 } from "antd";
-import type {RadioChangeEvent, TableColumnsType } from "antd";
+import type {RadioChangeEvent, TableColumnsType, TableProps } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import Image from "next/image";
 import Link from "next/link";
 import CoachInvite from "../../_components/CoachInvite";
+import { useState } from "react";
 // Team Alerts
 interface TeamAlert {
   key: React.Key;
@@ -36,6 +36,21 @@ interface DataType {
   email: string;
   img: string;
 }
+
+const rowSelection: TableProps<DataType>["rowSelection"] = {
+    onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
+      console.log(
+        `selectedRowKeys: ${selectedRowKeys}`,
+        "selectedRows: ",
+        selectedRows
+      );
+    },
+    // getCheckboxProps: (record: DataType) => ({
+    //   disabled: record.firstName === "Disabled User",
+    //   name: record.firstName,
+    // }),
+  };
+
 export default function MyTeam() {
   const data: DataType[] = [
     {
@@ -110,8 +125,8 @@ export default function MyTeam() {
       render: (_: unknown, record: DataType) => (
         <div className="coaches flex items-center">
           {record.firstName && (
-            <div className="flex justify-center items-center mr-3 gap-2">
-              <Checkbox onChange={onChange} />
+            <div className="flex justify-center items-center mr-3">
+              {/* <Checkbox onChange={onChange} /> */}
               <Image
                 src={record.img}
                 alt={record.firstName}
@@ -258,6 +273,11 @@ export default function MyTeam() {
   const onChange = (e: RadioChangeEvent) => {
     console.log(`radio checked:${e.target.value}`);
   };
+
+  
+
+    const [selectionType] = useState<"checkbox" | "radio">("checkbox");
+  
 
   return (
     <Layout>
@@ -500,6 +520,7 @@ export default function MyTeam() {
           </Flex>
           <div>
             <Table<DataType>
+              rowSelection={{ type: selectionType, ...rowSelection }}
               columns={columns}
               dataSource={data}
               pagination={false}

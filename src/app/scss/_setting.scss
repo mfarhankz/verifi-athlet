@@ -254,7 +254,7 @@ h2.setting-heading {
     font-style: normal;
     font-weight: 400;
     line-height: 25px;
-    margin: 5px 0 0 0;
+    margin: 0;
     color: var(--primary);
   }
   .ant-select {
@@ -347,6 +347,14 @@ h2.setting-heading {
     rgb(106, 255, 171),
     rgb(200, 255, 36)
   );
+  &:hover {
+    background-image: linear-gradient(
+    to right,
+    rgb(106, 255, 171),
+    rgb(200, 255, 36)
+  ) !important;
+  opacity: 0.6;
+  }
 }
 .custom-h3 {
 

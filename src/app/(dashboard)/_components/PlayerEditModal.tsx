@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Flex, Select, Switch, Typography } from "antd";
+import { Button, Dropdown, Flex, MenuProps, Select, Switch, Typography } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import ImageWithAverage from "../_components/ImageWithAverage";
@@ -13,6 +13,22 @@ export default function PlayerEditModal() {
   const onChange = (checked: boolean) => {
     console.log(`switch to ${checked}`);
   };
+
+  const items: MenuProps["items"] = [
+      {
+        label: <a href="#">Upload new photo</a>,
+        key: "0",
+        icon: <i className="icon-camera"></i>,
+      },
+      {
+        type: "divider",
+      },
+      {
+        label: <a href="#">Remove photo</a>,
+        key: "1",
+        icon: <i className="icon-camera-slash"></i>,
+      },
+    ];
 
   return (
     <div className="main-container">
@@ -28,6 +44,17 @@ export default function PlayerEditModal() {
                 containerWidth="100%"
                 average={85.7}
               />
+              <Flex className="camera">
+                  <Dropdown
+                    className="absolute right-0"
+                    menu={{ items }}
+                    trigger={["click"]}
+                  >
+                    <Button className="select-dropdown">
+                      <i className="icon-camera"></i>
+                    </Button>
+                  </Dropdown>
+                </Flex>
               <Flex className="w-[100%]">
                 <ul>
                   <li>

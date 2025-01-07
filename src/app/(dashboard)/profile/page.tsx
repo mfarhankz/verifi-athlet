@@ -54,7 +54,7 @@ export default function Profile() {
                 />
                 <Flex className="camera">
                   <Dropdown
-                    className="absolute right-0 top-52"
+                    className="absolute right-0"
                     menu={{ items }}
                     trigger={["click"]}
                   >
