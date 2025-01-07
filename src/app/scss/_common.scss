@@ -60,6 +60,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 42px;
   span {
     color: var(--text-white);
     font-size: 18px;
@@ -77,6 +78,8 @@ p {
 .ant-input  {
   border-radius: 0;
   min-height: 40px;
+  font-family: var(--antd-font-family);
+  color: var(--primary);
 }
 
 .plus-filed {
