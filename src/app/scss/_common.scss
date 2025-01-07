@@ -580,3 +580,24 @@ color: var(--success);
     }
   }
 }
+.player-img {
+  position: relative;
+  .not-available {
+    opacity: 0;
+    position: absolute;
+    z-index: 10;
+    top: 80px;
+  }
+}
+
+.player-not-available {
+  .player-img {
+    .not-available {
+      opacity: 1;
+    }
+  }
+  
+  .gray-scale {
+    filter: grayscale(100%);
+  }
+}

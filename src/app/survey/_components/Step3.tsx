@@ -80,7 +80,7 @@ export default function Setp3() {
           </Flex>
         </Flex>
         <Flex>
-          <Typography.Text>
+          <Typography.Text className="text-center">
           Now you can share your completed survey to your X Account
           </Typography.Text>
         </Flex>

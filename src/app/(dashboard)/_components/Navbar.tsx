@@ -12,10 +12,6 @@ const items: MenuProps["items"] = [
     label: <Link href="/survey">Survey</Link>,
   },
   {
-    key: "2",
-    label: <Link href="/profile">Profile</Link>,
-  },
-  {
     key: "3",
     label: <Link href="/settings">Settings</Link>,
   },

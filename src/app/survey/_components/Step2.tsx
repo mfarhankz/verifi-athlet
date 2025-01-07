@@ -39,7 +39,7 @@ export default function Setp2() {
           width={52}
         />
         <Flex vertical justify="center" align="center" className="text-center">
-          <Typography.Title level={4} className="italic">
+          <Typography.Title level={4} className="italic margin-0">
             Reason for Leaving
           </Typography.Title>
           <Typography.Text>

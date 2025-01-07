@@ -16,37 +16,64 @@ import Link from "next/link";
 import ImageWithAverage from "../_components/ImageWithAverage";
 
 export default function PrePortalSearch() {
+  const toggleBodyClass = () => {
+    const body = document.body;
+    if (body.classList.contains("player-not-available")) {
+      body.classList.remove("player-not-available");
+    } else {
+      body.classList.add("player-not-available");
+    }
+  };
+
   const items: MenuProps["items"] = [
-     {
-       label: <a href="#">Archive</a>,
-       key: "0",
-       icon: <i className="icon-archive-2"></i>,
-     },
-     {
-       type: "divider",
-     },
-     {
-       label: <a href="#">Mark as Read</a>,
-       key: "1",
-       icon: <i className="icon-eye"></i>,
-     },
-     {
-       type: "divider",
-     },
-     {
-       label: <a href="#">Add to Board</a>,
-       key: "3",
-       icon: <i className="icon-profile-add"></i>,
-     },
-     {
-       type: "divider",
-     },
-     {
-       label: <a href="#">Compare Athlete</a>,
-       key: "4",
-       icon: <i className="icon-profile-2user"></i>,
-     },
-   ];
+    {
+      label: <a href="#">Archive</a>,
+      key: "0",
+      icon: <i className="icon-archive-2"></i>,
+    },
+    {
+      type: "divider",
+    },
+    {
+      label: <a href="#">Mark as Read</a>,
+      key: "1",
+      icon: <i className="icon-eye"></i>,
+    },
+    {
+      type: "divider",
+    },
+    {
+      label: <a href="#">Add to Board</a>,
+      key: "3",
+      icon: <i className="icon-profile-add"></i>,
+    },
+    {
+      type: "divider",
+    },
+    {
+      label: <a href="#">Compare Athlete</a>,
+      key: "4",
+      icon: <i className="icon-profile-2user"></i>,
+    },
+    {
+      type: "divider",
+    },
+    {
+      label: (
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            toggleBodyClass();
+          }}
+        >
+          Not Available Athlete
+        </a>
+      ),
+      key: "5",
+      icon: <i className="icon-user-minus"></i>,
+    },
+  ];
   return (
     <Flex>
       <div className="main-container">
@@ -54,6 +81,13 @@ export default function PrePortalSearch() {
           <div className="col-span-9 card">
             <div className="flex w-100">
               <div className="player-img">
+                <Image
+                  src="/inactive.svg"
+                  alt=""
+                  height={20}
+                  width={250}
+                  className="not-available"
+                />
                 <ImageWithAverage
                   src="/plyer-b.png"
                   alt="Survey Image"
@@ -77,7 +111,7 @@ export default function PrePortalSearch() {
                   </li>
                 </ul>
               </div>
-              <div className="detail-box">
+              <div className="detail-box gray-scale">
                 <Flex justify="space-between" align="center">
                   <Flex>
                     <span className="badge">
@@ -230,7 +264,7 @@ export default function PrePortalSearch() {
               </div>
             </div>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-3 gray-scale">
             <div className="grid grid-cols-1 gap-4">
               <div className="card progress">
                 <h5>Player Statistics</h5>
@@ -314,10 +348,10 @@ export default function PrePortalSearch() {
             </div>
           </div>
 
-          <div className="col-span-8 card-withou-pading ">
+          <div className="col-span-8 card-withou-pading gray-scale">
             <PlayerInformation />
           </div>
-          <div className="col-span-4 card">
+          <div className="col-span-4 card gray-scale">
             <div className="flex items-center xfeed mb-10">
               <Image
                 src="/tw.svg"

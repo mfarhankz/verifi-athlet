@@ -28,8 +28,10 @@ export default function ImageWithAverage({
   };
   return (
     <Flex className={`user-image ${size}`} align="center" style={{width:containerWidth}}>
-      <Image src={src} alt={alt} height={height} width={width} />
-      <span className={getClassByAvg(average)}>{average}</span>
+      <Flex className="gray-scale">
+        <Image src={src} alt={alt} height={height} width={width} />
+        <span className={getClassByAvg(average)}>{average}</span>
+      </Flex>
     </Flex>
   );
 }
