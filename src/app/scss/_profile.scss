@@ -28,7 +28,22 @@
         padding: 0 6px 0 0;
       }
     }
-
+.camera{
+button{
+  background-color: var(--bg-primary);
+  border: none;
+  i{
+  color: var(--bg-white);
+  }
+}
+button:hover{
+    background-color: var(--bg-white);
+    border: none;
+    i{
+    color: var(--primary);
+    }
+}
+}
     ul {
       background-color: #f8f8fa;
       width: 100%;
