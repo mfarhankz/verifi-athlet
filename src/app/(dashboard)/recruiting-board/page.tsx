@@ -39,7 +39,7 @@ export default function RecruitingBoard() {
           </Typography.Paragraph>
         </Flex>
       </Flex>
-      <div className="w-[100%] overflow-auto flex">
+      <div className="w-[100%] overflow-auto h-[calc(100vh-155px)] flex">
         <MultipleContainers data={data} handle={true} />
       </div>
     </div>
