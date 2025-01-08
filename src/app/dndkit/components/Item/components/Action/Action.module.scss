@@ -16,6 +16,11 @@ $focused-outline-color: #4c9ffe;
   appearance: none;
   background-color: transparent;
   -webkit-tap-highlight-color: transparent;
+  i {
+    display: flex;
+        color: #1c1d4d;
+        opacity: 0.6;
+  }
 
   @media (hover: hover) {
     &:hover {

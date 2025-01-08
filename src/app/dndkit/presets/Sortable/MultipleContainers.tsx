@@ -519,10 +519,11 @@ function MultipleContainers({
               id={PLACEHOLDER_ID}
               disabled={isSortingContainer}
               items={empty}
-              onClick={handleAddColumn}
+              
               placeholder
             >
-              + Add column
+              <button onClick={handleAddColumn} className="add_column"><i></i> + Add column</button>
+              
             </DroppableContainer>
           )}
         </SortableContext>

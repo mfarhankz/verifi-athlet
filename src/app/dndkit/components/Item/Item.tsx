@@ -9,9 +9,8 @@ import { Handle, Remove } from "./components";
 
 import styles from "./Item.module.scss";
 import UserShortInfo from "@/app/(dashboard)/_components/UserShortInfo";
-import { Input, Modal } from "antd";
+import { Drawer, Input, Modal } from "antd";
 import PlayerEditModal from "@/app/(dashboard)/_components/PlayerEditModal";
-import { i } from "framer-motion/client";
 
 export interface Props {
   dragOverlay?: boolean;
@@ -76,18 +75,14 @@ export const Item = React.memo(
       },
       ref
     ) => {
-      const [isModalOpen, setIsModalOpen] = useState(false);
+      const [open, setOpen] = useState(false);
 
-      const showModal = () => {
-        setIsModalOpen(true);
+      const showDrawer = () => {
+        setOpen(true);
       };
 
-      const handleOk = () => {
-        setIsModalOpen(false);
-      };
-
-      const handleCancel = () => {
-        setIsModalOpen(false);
+      const onClose = () => {
+        setOpen(false);
       };
 
       const player = useMemo(
@@ -153,7 +148,7 @@ export const Item = React.memo(
               } as React.CSSProperties
             }
             ref={ref}
-            onClick={componentType !== "tableView" ? showModal : () => {}}
+            onClick={componentType !== "tableView" ? showDrawer : () => {}}
           >
             <div
               className={classNames(
@@ -170,8 +165,6 @@ export const Item = React.memo(
               {...props}
               tabIndex={!handle ? 0 : undefined}
             >
-              
-
               {componentType !== "tableView" ? (
                 <UserShortInfo
                   src={player?.image}
@@ -188,8 +181,12 @@ export const Item = React.memo(
                 />
               ) : (
                 <>
-                <i className="icon-add flex plus-filed"></i>
-                <Input type="text" placeholder="Column name" value={value?.toString()} />
+                  <i className="icon-add flex plus-filed"></i>
+                  <Input
+                    type="text"
+                    placeholder="Column name"
+                    value={value?.toString()}
+                  />
                 </>
               )}
 
@@ -202,16 +199,9 @@ export const Item = React.memo(
             </div>
           </li>
 
-          <Modal
-            footer={false}
-            open={isModalOpen}
-            onOk={handleOk}
-            onCancel={handleCancel}
-            width={950}
-            style={{ top: 10 }}
-          >
+          <Drawer width={1000} onClose={onClose} open={open}>
             <PlayerEditModal />
-          </Modal>
+          </Drawer>
         </>
       );
     }

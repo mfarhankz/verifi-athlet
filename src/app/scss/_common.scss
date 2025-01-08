@@ -42,7 +42,7 @@ h6 {
 }
 
 p {
-  font-size: 18px !important;
+  font-size: 16px !important;
   font-weight: 400 !important;
   color: var(--primary);
   line-height: 22px;
@@ -51,6 +51,14 @@ p {
 .ant-typography {
   font-family: var(--antd-font-family) !important;
   font-size: 16px;
+}
+
+.ant-drawer-header {
+  border: 0 !important;
+  padding-bottom: 0 !important;
+}
+.ant-drawer-body {
+  padding-top: 0 !important;
 }
 
 .filter-badge {
@@ -536,6 +544,7 @@ color: var(--success);
   }
 }
 .colum-header {
+  background: linear-gradient(81deg, #e2f7fe 0%, #fff 100%);
   gap: 8px;
   font-size: 16px;
   font-weight: 500;
@@ -568,6 +577,10 @@ color: var(--success);
         transform: skew(20deg);
         z-index: -1;
       }
+      background-color: #36c5f0;
+        &::after {
+          background-color: #36c5f0;
+        }
     }
   }
 }
@@ -590,6 +603,26 @@ color: var(--success);
   }
 }
 
+.add_column {
+  background-color: var(--bg-white);
+  font-size: 18px;
+  color: var(--primary);
+  width: 100%;
+    border-radius: 0;
+    margin-top: 40px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    i{
+      background: url(/kanban.svg) no-repeat;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+    }
+}
 .player-not-available {
   .player-img {
     .not-available {
