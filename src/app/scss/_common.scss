@@ -635,3 +635,56 @@ color: var(--success);
     filter: grayscale(100%);
   }
 }
+
+.ratingDropdown {
+    background-color: var(--bg-white);
+    box-shadow: 0 30px 30px #111f2c40;
+    width: 125px;
+    border: 1px solid #1c1d4d33;
+    ul {
+      height: 260px;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+      li{
+        padding: 5px 10px;
+        font-size: 18px;
+        color: var(--primary);
+        line-height: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        &:hover {
+          font-weight: 700;
+        }
+      }
+    }
+    .border-top {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: var(--bg-primary);
+        opacity: 0.2;
+      }
+    }
+    a {
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-white);
+      font-size: 18px;
+      margin: 0 2px;
+      &.success {
+        background-color: var(--success);
+      }
+      &.error {
+        background-color: var(--error);
+      }
+    }
+}
