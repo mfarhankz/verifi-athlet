@@ -74,6 +74,22 @@ export default function PrePortalSearch() {
       icon: <i className="icon-user-minus"></i>,
     },
   ];
+  const ratings = Array.from({ length: 41 }, (_, i) => (1 + i * 0.1).toFixed(1));
+
+  const dropdownRating = () => (
+    <div className="ratingDropdown">
+      <ul>
+      {ratings.map((rating, index) => (
+        <li key={index}>{rating}</li>
+      ))}
+      </ul>
+      <div className="flex items-center justify-center p-2 border-top">
+      <Link href="javascript:" className="success icon-check-2"></Link>
+      <Link href="javascript:" className="error icon-xmark-regular"></Link>
+      </div>
+    </div>
+  );
+
   return (
     <Flex>
       <div className="main-container">
@@ -137,8 +153,18 @@ export default function PrePortalSearch() {
                       height={22}
                       className="mr-1"
                     />
-                    4.2
-                    <Link href="/" className="icon-edit-2"></Link>
+                    {/* 4.2
+                    <Link href="javascript:" className="icon-edit-2"></Link> */}
+
+                    <Dropdown
+                      dropdownRender={dropdownRating}
+                      trigger={["click"]}
+                    >
+                      <span className="flex items-center justify-center">
+                        4.2
+                        <Link href="javascript:" className="icon-edit-2"></Link>
+                      </span>
+                    </Dropdown>
                   </span>
                 </h1>
                 <div className="arrow-bg">
