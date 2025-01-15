@@ -338,6 +338,22 @@ h4.setting-heading {
   padding: 15px 0;
 }
 
+.setting-head {
+  position: relative;
+  padding-top: 0;
+  .setting-heading {
+    background: #fff;
+    margin: 0;
+    padding: 15px 15px 75px 15px;
+  }
+  .ant-tabs-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70px;
+  }
+}
+
 .linear-gradient {
   background-color: rgb(106, 255, 171);
   background-image: linear-gradient(

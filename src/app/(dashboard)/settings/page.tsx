@@ -51,7 +51,7 @@ export default function Setting() {
 
   return (
     <div className="main-container">
-      <div className={`${activeTab !== "2" ? "card" : ""} c-height`}>
+      <div className={`${activeTab !== "2" ? "card" : "setting-head"} c-height`}>
         <Typography.Title level={4} className="setting-heading">
           {headingText[activeTab] || "Default Settings"}
         </Typography.Title>
